@@ -1,0 +1,8 @@
+@use './partials/reset' as *;
+@use './partials/mixins' as *;
+@use './partials/variables' as *;
+@use './partials/typography' as *;
+
+body {
+    font-family: 'AvenirNext LT Pro', sans-serif;
+}
