@@ -6,6 +6,10 @@
 body {
     font-family: $font-primary;
     font-weight: normal;
+    @include desktop {
+        //why isn't this working to get the added margin on the side of the page
+        margin: 0 auto;
+    }
 }
 a {
     text-decoration: none;
@@ -20,9 +24,17 @@ a {
     flex-direction: column;
     padding-top: 1rem;
     width: 100%;
+    @include tablet {
+        flex-direction: row;
+        padding: 1.75rem;
+        padding-bottom: 0;
+    }
     &__logo {
         height: 2rem;
         margin-bottom: 1rem;
+        @include tablet {
+            height: 1.5rem;
+        }
     }
     &__navbar {
         text-align: center;
@@ -33,16 +45,22 @@ a {
         justify-content: space-around;
         width: 100%;
         font-size: 1.25rem;
+        padding-bottom: 1.75rem;
+        @include tablet {
+            justify-content: space-evenly;
+            
+        }
     }
     &__item{
         color: $color-accent;
-        width: 50%;
     } 
     &__active {
-        border-bottom: 2px solid $color-accent;
+        border-bottom: 4px solid $color-accent;
+        // display: inline;
         //figure out how to spread border from left to right 50%
-        padding-bottom: 1rem;
-        font-weight: bold;
+        padding-bottom: 1.65rem;
+        font-weight: 800;
+        
     }
 }
 
@@ -52,13 +70,19 @@ a {
     align-items: center;
     justify-content: left;
     background-image: url(../assets/images/hero-bio.jpg);
-    background-size: cover;
+    background-size:cover;
     height: 50vh;
+    @include tablet {
+        height: 70vh;
+    }
     &__title {
         color: $color-accent;
         font-size: 2rem;
-        font-weight: bold;
+        font-weight: 800;
         margin: 1rem;
+        @include tablet {
+            font-size: 4rem;
+        }
     }
 }
 
@@ -66,38 +90,96 @@ a {
 .about {
     display: flex;
     flex-direction: column;
+    @include tablet {
+        padding: 1.5rem;
+    }
     &__title {
         font-size: 2rem;
-        padding: 1.5rem 1rem 1rem 1rem;
+        padding: 2rem 1rem 0 1rem;
+        font-weight: 600;
+        @include tablet {
+            padding-bottom: 1rem;
+        }
+    }
+    &__container--img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     &__img {
         width: 90vw;
+        @include tablet {
+            width: 75vw;
+        }
     }
     &__quote {
         margin-top: 1rem;
         display: flex;
         align-items: flex-start;
     }
+    &__quote-author {
+        padding-top: 1rem;
+        @include tablet {
+            font-size: 1rem;
+        }
+    }
     &__container--quote {
         font-size: 1.5rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: left;
+        align-items: flex-start;
+        justify-content: center;
         line-height: 2rem;
-        padding: 1.5rem;
+        padding: 1rem 1.5rem 1.5rem 1.5rem;
+        font-weight: 600;
+        @include tablet {
+            width: 75vw;
+            margin: auto;
+            padding: 1rem 0 1.5rem 0;
+        }
+    }
+    &__container {
+        padding: 1.5rem 1.5rem 0rem 1.5rem;
+        @include tablet {
+            width: 75vw;
+            margin: auto;
+            padding: 1rem 0 0 0;
+        }
     }
     &__container--text {
         display: flex;
         flex-direction: column;
         line-height: 1.5rem;
         padding: 1.5rem;
+        @include tablet {
+            flex-direction: row; 
+            width: 75vw;
+            margin: auto;
+            padding: 1rem 0 1.5rem 0;   
+        }
+    }
+    &__info--left {
+        @include tablet {
+            padding-right: 0.5rem;
+        }
+    }
+    &__info--right {
+        @include tablet {
+            padding-left: 0.5rem;
+        }
     }
     &__subtitle {
         font-size: 1.5rem;
+        @include tablet {
+            font-weight: 600;;
+        }
     }
     &__info {
         margin-top: 1rem;
+        @include tablet {
+            margin-top: 0;
+            // padding: 1rem;
+        }
     }
 }
 
@@ -105,6 +187,9 @@ a {
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
+    @include tablet {
+        padding: 1.5rem 2rem 1.5rem 2rem;
+    }
     &__title {
         font-size: 2rem;
         font-weight: bold;
@@ -114,10 +199,17 @@ a {
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+        @include tablet {
+            justify-content: space-between;
+        }
     }
     &__images--img {
         width: 90vw;
         padding-top: 1.5rem;
+        @include tablet {
+            width: 30%;
+            
+        }
     }
 }
 
@@ -126,27 +218,66 @@ a {
     color: $color-accent;
     padding: 1.5rem;
     line-height: 1.5rem;
+    position: relative;
     &__title {
-        font-size: 2rem;
-        font-weight: bold;
-        padding: 1.5rem 0;
+        font-size: 2.35rem;
+        font-weight: 800;
+        padding: 1.75rem 0;
+        @include tablet {
+            margin-right: 2rem;
+            // letter-spacing: 3px;
+            font-weight: 600;
+        }
+    }
+    &__social {
+        padding: 1rem 0;
     }
     &__social-icon {
         height: 2rem;
         padding-right: 2rem;
+        
     }
     &__container {
         display: flex;
         flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
-    &__address {
-        margin-top: 1rem;
+    &__container--social {
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+        }
     }
-    &__address--agent {
-        margin-top: 1rem;
+    &__card--agent {
+        margin: 1rem 0rem;
+        font-weight: 600;
     }
-    &__address--email {
-        margin-top: 1rem;
+    &__card--address {
+        margin-bottom: 1rem;
+    }
+    &__card--email {
+        margin-bottom: 1rem;
+    }
+    &__logo-img {
+        height: 1.75rem;
+        margin-bottom: 1rem;
+        margin-top: 3rem;
+        @include tablet {
+            position: absolute;
+            right: 5%;
+            top: 0;
+            height: 1.25rem;
+        }
+    }
+    &__copyright {
+        @include tablet {
+            padding-top: 1.5rem;
+        }
     }
 }
 
