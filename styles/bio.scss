@@ -6,28 +6,26 @@
 body {
     font-family: $font-primary;
     font-weight: normal;
-    @include desktop {
-        //why isn't this working to get the added margin on the side of the page
-        margin: 0 auto;
-    }
 }
-a {
-    text-decoration: none;
-}
-
 // navbar css
 .navbar {
     background-color: $color-dark;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding-top: 1rem;
-    width: 100%;
-    @include tablet {
-        flex-direction: row;
-        padding: 1.75rem;
-        padding-bottom: 0;
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 1rem;
+        width: 100%;
+        @include tablet {
+            flex-direction: row;
+            padding: 1.75rem;
+            padding-bottom: 0;
+        }
+        @include desktop {
+            margin: 0 auto;
+            width: 1280px;
+        }
     }
     &__logo {
         height: 2rem;
@@ -42,24 +40,28 @@ a {
     }
     &__item-list {
         display: flex;
-        justify-content: space-around;
-        width: 100%;
+        justify-content: stretch;
         font-size: 1.25rem;
-        padding-bottom: 1.75rem;
         @include tablet {
-            justify-content: space-evenly;
-            
+            justify-content: left;
+            margin-left: 5rem;
+           
         }
     }
     &__item{
         color: $color-accent;
+        text-decoration: none;
+        width: 50%;
+        
     } 
     &__active {
         border-bottom: 4px solid $color-accent;
-        // display: inline;
-        //figure out how to spread border from left to right 50%
+        width: 50%;
         padding-bottom: 1.65rem;
         font-weight: 800;
+        @include tablet {
+            width: auto;
+        }
         
     }
 }
@@ -69,7 +71,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: left;
-    background-image: url(../assets/images/hero-bio.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), 
+    url(../assets/images/hero-bio.jpg);
     background-size:cover;
     height: 50vh;
     @include tablet {
@@ -79,7 +82,7 @@ a {
         color: $color-accent;
         font-size: 2rem;
         font-weight: 800;
-        margin: 1rem;
+        margin: 2rem;
         @include tablet {
             font-size: 4rem;
         }
@@ -89,13 +92,14 @@ a {
 // about section
 .about {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  
+    margin: 0 2rem;  
     @include tablet {
-        padding: 1.5rem;
     }
     &__title {
         font-size: 2rem;
-        padding: 2rem 1rem 0 1rem;
+        padding: 2.5rem 0rem 1.5rem 0rem;
+        // margin-left: 2rem;
         font-weight: 600;
         @include tablet {
             padding-bottom: 1rem;
@@ -118,61 +122,53 @@ a {
         align-items: flex-start;
     }
     &__quote-author {
-        padding-top: 1rem;
+        margin-top: 1rem;
         @include tablet {
             font-size: 1rem;
         }
     }
-    &__container--quote {
-        font-size: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        line-height: 2rem;
-        padding: 1rem 1.5rem 1.5rem 1.5rem;
-        font-weight: 600;
-        @include tablet {
-            width: 75vw;
-            margin: auto;
-            padding: 1rem 0 1.5rem 0;
-        }
-    }
     &__container {
-        padding: 1.5rem 1.5rem 0rem 1.5rem;
+        margin: 2rem 0 1rem 0;
+        // padding: 1.5rem 1.5rem 0rem 1.5rem;
         @include tablet {
             width: 75vw;
             margin: auto;
             padding: 1rem 0 0 0;
         }
-    }
-    &__container--text {
-        display: flex;
-        flex-direction: column;
-        line-height: 1.5rem;
-        padding: 1.5rem;
-        @include tablet {
-            flex-direction: row; 
-            width: 75vw;
-            margin: auto;
-            padding: 1rem 0 1.5rem 0;   
+        &--quote {
+            font-size: 1.5rem;
+            // margin: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            line-height: 2rem;
+            // padding: 1rem 1.5rem 1.5rem 1.5rem;
+            font-weight: 600;
+            @include tablet {
+                width: 75vw;
+                margin: auto;
+                padding: 1rem 0 1.5rem 0;
+            }
+        }
+        &--text {
+            display: flex;
+            // margin: 0 0.75rem;
+            flex-direction: column;
+            line-height: 1.5rem;
+            // padding: 1.5rem;
+            @include tablet {
+                flex-direction: row; 
+                width: 75vw;
+                margin: auto;
+                padding: 1rem 0 1.5rem 0;   
+            }
         }
     }
-    &__info--left {
-        @include tablet {
-            padding-right: 0.5rem;
-        }
-    }
-    &__info--right {
-        @include tablet {
-            padding-left: 0.5rem;
-        }
-    }
+
     &__subtitle {
         font-size: 1.5rem;
-        @include tablet {
-            font-weight: 600;;
-        }
+        font-weight: 600;
     }
     &__info {
         margin-top: 1rem;
@@ -180,37 +176,53 @@ a {
             margin-top: 0;
             // padding: 1rem;
         }
+        &--left {
+            @include tablet {
+                padding-right: 0.5rem;
+            }
+        }
+        &--right {
+            @include tablet {
+                padding-left: 0.5rem;
+            }
+        }
     }
 }
 
 .photo-gallery {
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    margin-top: 3rem;
+    
     @include tablet {
         padding: 1.5rem 2rem 1.5rem 2rem;
     }
     &__title {
+        margin-left: 2rem;
         font-size: 2rem;
         font-weight: bold;
+        @include tablet {
+            margin-left: 0;
+        }
     }
     &__images {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+        margin-bottom: 2rem;
         @include tablet {
             justify-content: space-between;
         }
-    }
-    &__images--img {
-        width: 90vw;
-        padding-top: 1.5rem;
-        @include tablet {
-            width: 30%;
-            
+        &--img {
+            width: 90vw;
+            padding-top: 1.5rem;
+            @include tablet {
+                width: 30%;
+            }
         }
     }
+ 
 }
 
 .footer {
@@ -244,13 +256,13 @@ a {
             flex-direction: row;
             justify-content: space-between;
         }
-    }
-    &__container--social {
-        display: flex;
-        flex-direction: column;
-        @include tablet {
-            flex-direction: row;
-            align-items: center;
+        &--social {
+            display: flex;
+            flex-direction: column;
+            @include tablet {
+                flex-direction: row;
+                align-items: center;
+            }
         }
     }
     &__card--agent {
