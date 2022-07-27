@@ -1,27 +1,225 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "AvenirNext LT Pro";
-  src: url("AvenirNextLTPro-Demi.eot");
-  src: url("AvenirNextLTPro-Demi.eot?#iefix") format("embedded-opentype"), url("AvenirNextLTPro-Demi.woff2") format("woff2"), url("AvenirNextLTPro-Demi.woff") format("woff"), url("AvenirNextLTPro-Demi.ttf") format("truetype"), url("AvenirNextLTPro-Demi.svg#AvenirNextLTPro-Demi") format("svg");
-  font-weight: bold;
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.eot");
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Demi.ttf") format("truetype"), url("../assets/fonts/AvenirNextLTPro-Demi.svg#AvenirNextLTPro-Demi") format("svg");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "AvenirNext LT Pro";
-  src: url("AvenirNextLTPro-Regular.eot");
-  src: url("AvenirNextLTPro-Regular.eot?#iefix") format("embedded-opentype"), url("AvenirNextLTPro-Regular.woff2") format("woff2"), url("AvenirNextLTPro-Regular.woff") format("woff"), url("AvenirNextLTPro-Regular.ttf") format("truetype"), url("AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular") format("svg");
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.eot");
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Regular.ttf") format("truetype"), url("../assets/fonts/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "AvenirNext LT Pro";
-  src: url("AvenirNextLTPro-Bold.eot");
-  src: url("AvenirNextLTPro-Bold.eot?#iefix") format("embedded-opentype"), url("AvenirNextLTPro-Bold.woff2") format("woff2"), url("AvenirNextLTPro-Bold.woff") format("woff"), url("AvenirNextLTPro-Bold.ttf") format("truetype"), url("AvenirNextLTPro-Bold.svg#AvenirNextLTPro-Bold") format("svg");
-  font-weight: bold;
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.eot");
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Bold.ttf") format("truetype"), url("../assets/fonts/AvenirNextLTPro-Bold.svg#AvenirNextLTPro-Bold") format("svg");
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 body {
   font-family: "AvenirNext LT Pro", sans-serif;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #323232;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 1rem;
+  width: 100%;
+}
+.navbar__logo {
+  height: 2rem;
+  margin-bottom: 1rem;
+}
+.navbar__navbar {
+  text-align: center;
+  width: 100%;
+}
+.navbar__item-list {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 1.25rem;
+}
+.navbar__item {
+  color: #FFFFFF;
+  width: 50%;
+}
+.navbar__active {
+  border-bottom: 2px solid #FFFFFF;
+  padding-bottom: 1rem;
+  font-weight: bold;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-image: url(../assets/images/hero-bio.jpg);
+  background-size: cover;
+  height: 50vh;
+}
+.hero__title {
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+}
+.about__title {
+  font-size: 2rem;
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+.about__img {
+  width: 90vw;
+}
+.about__quote {
+  margin-top: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+.about__container--quote {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  line-height: 2rem;
+  padding: 1.5rem;
+}
+.about__container--text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5rem;
+  padding: 1.5rem;
+}
+.about__subtitle {
+  font-size: 1.5rem;
+}
+.about__info {
+  margin-top: 1rem;
+}
+
+.photo-gallery {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+.photo-gallery__title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.photo-gallery__images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.photo-gallery__images--img {
+  width: 90vw;
+  padding-top: 1.5rem;
+}
+
+.footer {
+  background-color: #323232;
+  color: #FFFFFF;
+  padding: 1.5rem;
+  line-height: 1.5rem;
+}
+.footer__title {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1.5rem 0;
+}
+.footer__social-icon {
+  height: 2rem;
+  padding-right: 2rem;
+}
+.footer__container {
+  display: flex;
+  flex-direction: column;
+}
+.footer__address {
+  margin-top: 1rem;
+}
+.footer__address--agent {
+  margin-top: 1rem;
+}
+.footer__address--email {
+  margin-top: 1rem;
 }/*# sourceMappingURL=bio.css.map */

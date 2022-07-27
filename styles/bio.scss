@@ -1,8 +1,152 @@
 @use './partials/reset' as *;
 @use './partials/mixins' as *;
-@use './partials/variables' as *;
 @use './partials/typography' as *;
+@use './partials/variables' as *;
 
 body {
-    font-family: 'AvenirNext LT Pro', sans-serif;
+    font-family: $font-primary;
+    font-weight: normal;
 }
+a {
+    text-decoration: none;
+}
+
+// navbar css
+.navbar {
+    background-color: $color-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 1rem;
+    width: 100%;
+    &__logo {
+        height: 2rem;
+        margin-bottom: 1rem;
+    }
+    &__navbar {
+        text-align: center;
+        width: 100%;
+    }
+    &__item-list {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        font-size: 1.25rem;
+    }
+    &__item{
+        color: $color-accent;
+        width: 50%;
+    } 
+    &__active {
+        border-bottom: 2px solid $color-accent;
+        //figure out how to spread border from left to right 50%
+        padding-bottom: 1rem;
+        font-weight: bold;
+    }
+}
+
+// hero css
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-image: url(../assets/images/hero-bio.jpg);
+    background-size: cover;
+    height: 50vh;
+    &__title {
+        color: $color-accent;
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 1rem;
+    }
+}
+
+// about section
+.about {
+    display: flex;
+    flex-direction: column;
+    &__title {
+        font-size: 2rem;
+        padding: 1.5rem 1rem 1rem 1rem;
+    }
+    &__img {
+        width: 90vw;
+    }
+    &__quote {
+        margin-top: 1rem;
+        display: flex;
+        align-items: flex-start;
+    }
+    &__container--quote {
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: left;
+        line-height: 2rem;
+        padding: 1.5rem;
+    }
+    &__container--text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.5rem;
+        padding: 1.5rem;
+    }
+    &__subtitle {
+        font-size: 1.5rem;
+    }
+    &__info {
+        margin-top: 1rem;
+    }
+}
+
+.photo-gallery {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    &__title {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    &__images {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    &__images--img {
+        width: 90vw;
+        padding-top: 1.5rem;
+    }
+}
+
+.footer {
+    background-color: $color-dark;
+    color: $color-accent;
+    padding: 1.5rem;
+    line-height: 1.5rem;
+    &__title {
+        font-size: 2rem;
+        font-weight: bold;
+        padding: 1.5rem 0;
+    }
+    &__social-icon {
+        height: 2rem;
+        padding-right: 2rem;
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+    &__address {
+        margin-top: 1rem;
+    }
+    &__address--agent {
+        margin-top: 1rem;
+    }
+    &__address--email {
+        margin-top: 1rem;
+    }
+}
+
