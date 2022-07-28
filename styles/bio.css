@@ -175,6 +175,11 @@ body {
   color: #FFFFFF;
   text-decoration: none;
   width: 50%;
+  transition: 0.5s;
+}
+.navbar__item:hover {
+  color: #AFAFAF;
+  font-weight: 800;
 }
 .navbar__active {
   border-bottom: 4px solid #FFFFFF;

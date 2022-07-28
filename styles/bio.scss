@@ -63,7 +63,11 @@ body {
         color: $color-accent;
         text-decoration: none;
         width: 50%;
-        
+        transition: 0.5s;
+        &:hover {
+            color: $color-light;
+            font-weight: 800;
+        }
     } 
     &__active {
         border-bottom: 4px solid $color-accent;
