@@ -30,10 +30,22 @@ body {
     &__logo {
         height: 2rem;
         margin-bottom: 1rem;
+        &:hover {
+            animation: tilt-shaking .5s infinite;
+        }
+        @keyframes tilt-shaking {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0eg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+          }
         @include tablet {
             height: 1.5rem;
         }
     }
+
+  
     &__navbar {
         text-align: center;
         width: 100%;
@@ -217,6 +229,10 @@ body {
         &--img {
             width: 90vw;
             padding-top: 1.5rem;
+            filter: brightness(40%);
+            &:hover {
+                filter: brightness(100%);
+            }
             @include tablet {
                 width: 30%;
             }
@@ -274,6 +290,11 @@ body {
     }
     &__card--email {
         margin-bottom: 1rem;
+        a {
+            text-decoration: none;
+            color: $color-accent;
+        }
+        
     }
     &__logo-img {
         height: 1.75rem;
