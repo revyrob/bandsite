@@ -386,6 +386,10 @@ body {
 .footer__social-icon {
   height: 2rem;
   padding-right: 2rem;
+  transition: 0.5s;
+}
+.footer__social-icon:hover {
+  height: 3rem;
 }
 .footer__container {
   display: flex;

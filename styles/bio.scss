@@ -30,6 +30,7 @@ body {
     &__logo {
         height: 2rem;
         margin-bottom: 1rem;
+        //hover affect of shaking logo when the user hovers over
         &:hover {
             animation: tilt-shaking .5s infinite;
         }
@@ -44,8 +45,6 @@ body {
             height: 1.5rem;
         }
     }
-
-  
     &__navbar {
         text-align: center;
         width: 100%;
@@ -111,7 +110,6 @@ body {
     &__title {
         font-size: 2rem;
         padding: 2.5rem 0rem 1.5rem 0rem;
-        // margin-left: 2rem;
         font-weight: 600;
         @include tablet {
             padding-bottom: 1rem;
@@ -141,7 +139,6 @@ body {
     }
     &__container {
         margin: 2rem 0 1rem 0;
-        // padding: 1.5rem 1.5rem 0rem 1.5rem;
         @include tablet {
             width: 75vw;
             margin: auto;
@@ -149,13 +146,11 @@ body {
         }
         &--quote {
             font-size: 1.5rem;
-            // margin: 0 2rem;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
             line-height: 2rem;
-            // padding: 1rem 1.5rem 1.5rem 1.5rem;
             font-weight: 600;
             @include tablet {
                 width: 75vw;
@@ -165,10 +160,8 @@ body {
         }
         &--text {
             display: flex;
-            // margin: 0 0.75rem;
             flex-direction: column;
             line-height: 1.5rem;
-            // padding: 1.5rem;
             @include tablet {
                 flex-direction: row; 
                 width: 75vw;
@@ -186,7 +179,6 @@ body {
         margin-top: 1rem;
         @include tablet {
             margin-top: 0;
-            // padding: 1rem;
         }
         &--left {
             @include tablet {
@@ -263,6 +255,11 @@ body {
     &__social-icon {
         height: 2rem;
         padding-right: 2rem;
+        //added animation for the social icons when they are hovered
+        transition: 0.5s;
+        &:hover {
+            height: 3rem;
+        }
         
     }
     &__container {
