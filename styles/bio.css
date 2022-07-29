@@ -105,8 +105,9 @@ body {
 }
 @media (min-width: 1280px) {
   .navbar__wrapper {
+    max-width: 1280px;
+    width: 100%;
     margin: 0 auto;
-    width: 1200px;
   }
 }
 .navbar__logo {
@@ -204,6 +205,8 @@ body {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url(../assets/images/hero-bio.jpg);
   background-position: center;
   background-size: cover;
+  min-height: 300px;
+  max-height: 1000px;
   height: 50vh;
 }
 @media (min-width: 768px) {
@@ -224,7 +227,8 @@ body {
 }
 @media (min-width: 1280px) {
   .hero__title {
-    width: 1200px;
+    max-width: 1280px;
+    width: 100%;
     margin: 0 auto;
   }
 }
@@ -246,8 +250,9 @@ body {
 }
 @media (min-width: 1280px) {
   .about__title {
+    max-width: 1280px;
+    width: 100%;
     margin: 0 auto;
-    width: 1200px;
   }
 }
 .about__img--container {
@@ -351,8 +356,9 @@ body {
 @media (min-width: 1280px) {
   .photo-gallery {
     padding: 1.5rem 0;
+    max-width: 1280px;
+    width: 100%;
     margin: 0 auto;
-    width: 1200px;
   }
 }
 .photo-gallery__title {
@@ -401,8 +407,9 @@ body {
 @media (min-width: 1280px) {
   .footer__wrapper {
     padding: 0;
+    max-width: 1280px;
+    width: 100%;
     margin: 0 auto;
-    width: 1200px;
   }
 }
 .footer__title {

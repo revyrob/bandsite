@@ -7,6 +7,7 @@ body {
     font-family: $font-primary;
     font-weight: normal;
 }
+
 // navbar css
 .navbar {
     background-color: $color-dark;
@@ -23,8 +24,7 @@ body {
             padding-bottom: 0;
         }
         @include desktop {
-            margin: 0 auto;
-            width: 1200px;
+            @include wrapper ($desktop-width);
         }
     }
     &__logo {
@@ -56,7 +56,6 @@ body {
         @include tablet {
             justify-content: left;
             margin-left: 5rem;
-            
         }
     }
     &__item{
@@ -81,7 +80,6 @@ body {
         @include tablet {
             width: auto;
         }
-        
     }
 }
 
@@ -94,6 +92,8 @@ body {
     url(../assets/images/hero-bio.jpg);
     background-position: center;
     background-size:cover;
+    min-height: 300px;
+    max-height: 1000px;
     height: 50vh;
     @include tablet {
         height: 70vh;
@@ -107,8 +107,7 @@ body {
             font-size: 4rem;
         }
         @include desktop {
-            width: 1200px;
-            margin: 0 auto;
+            @include wrapper ($desktop-width);
         }
     }
 }
@@ -128,8 +127,7 @@ body {
             padding-bottom: 1rem;
         }
         @include desktop {
-            margin: 0 auto;
-            width: 1200px;
+            @include wrapper ($desktop-width);
         }
     }
     &__img--container {
@@ -219,8 +217,7 @@ body {
     }
     @include desktop {
         padding: 1.5rem 0;
-        margin: 0 auto;
-        width: 1200px;
+        @include wrapper ($desktop-width);
     }
     &__title {
         margin-left: 2rem;
@@ -262,9 +259,7 @@ body {
     &__wrapper {
         @include desktop {
             padding: 0;
-            margin: 0 auto;
-            width: 1200px;
-            
+            @include wrapper ($desktop-width);
         }
     }
     &__title {
