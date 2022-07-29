@@ -106,7 +106,7 @@ body {
 @media (min-width: 1280px) {
   .navbar__wrapper {
     margin: 0 auto;
-    width: 1280px;
+    width: 1200px;
   }
 }
 .navbar__logo {
@@ -202,6 +202,7 @@ body {
   align-items: center;
   justify-content: left;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url(../assets/images/hero-bio.jpg);
+  background-position: center;
   background-size: cover;
   height: 50vh;
 }
@@ -221,6 +222,12 @@ body {
     font-size: 4rem;
   }
 }
+@media (min-width: 1280px) {
+  .hero__title {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
 
 .about {
   display: flex;
@@ -229,12 +236,18 @@ body {
 }
 .about__title {
   font-size: 2rem;
-  padding: 2.5rem 0rem 1.5rem 0rem;
+  padding: 2.5rem 0rem 1.5rem;
   font-weight: 600;
 }
 @media (min-width: 768px) {
   .about__title {
     padding-bottom: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .about__title {
+    margin: 0 auto;
+    width: 1200px;
   }
 }
 .about__img--container {
@@ -286,7 +299,7 @@ body {
   .about__container--quote {
     width: 75vw;
     margin: auto;
-    padding: 1rem 0 1.5rem 0;
+    padding: 1rem 0 1.5rem;
   }
 }
 .about__container--text {
@@ -299,7 +312,7 @@ body {
     flex-direction: row;
     width: 75vw;
     margin: auto;
-    padding: 1rem 0 1.5rem 0;
+    padding: 1rem 0 1.5rem;
   }
 }
 .about__subtitle {
@@ -332,7 +345,14 @@ body {
 }
 @media (min-width: 768px) {
   .photo-gallery {
-    padding: 1.5rem 2rem 1.5rem 2rem;
+    padding: 1.5rem 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .photo-gallery {
+    padding: 1.5rem 0;
+    margin: 0 auto;
+    width: 1200px;
   }
 }
 .photo-gallery__title {
@@ -377,6 +397,13 @@ body {
   padding: 1.5rem;
   line-height: 1.5rem;
   position: relative;
+}
+@media (min-width: 1280px) {
+  .footer__wrapper {
+    padding: 0;
+    margin: 0 auto;
+    width: 1200px;
+  }
 }
 .footer__title {
   font-size: 2.35rem;
