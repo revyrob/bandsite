@@ -40,7 +40,7 @@ body {
             50% { transform: rotate(0eg); }
             75% { transform: rotate(-5deg); }
             100% { transform: rotate(0deg); }
-          }
+        }
         @include tablet {
             height: 1.5rem;
         }
@@ -56,7 +56,7 @@ body {
         @include tablet {
             justify-content: left;
             margin-left: 5rem;
-           
+            
         }
     }
     &__item{
@@ -251,7 +251,6 @@ body {
             }
         }
     }
- 
 }
 
 .footer {
@@ -265,6 +264,7 @@ body {
             padding: 0;
             margin: 0 auto;
             width: 1200px;
+            
         }
     }
     &__title {
@@ -273,7 +273,6 @@ body {
         padding: 1.75rem 0;
         @include tablet {
             margin-right: 2rem;
-            // letter-spacing: 3px;
             font-weight: 600;
         }
     }
@@ -290,13 +289,13 @@ body {
     }
     &__social-icon {
         img {
-        height: 2rem;
-        //added animation for the social icons when they are hovered
-        transition: 0.5s;
-        &:hover {
-            height: 3rem;
+            height: 2rem;
+            //added animation for the social icons when they are hovered
+            transition: 0.5s;
+            &:hover {
+                height: 3rem;
+            }
         }
-    }
     }
     &__container {
         display: flex;
@@ -304,6 +303,9 @@ body {
         @include tablet {
             flex-direction: row;
             justify-content: space-between;
+        }
+        @include desktop {
+            width: 75%;
         }
         &--social {
             display: flex;
@@ -327,23 +329,36 @@ body {
             text-decoration: none;
             color: $color-accent;
         }
-        
     }
+    
     &__logo-img {
         height: 1.75rem;
-        margin-bottom: 1rem;
-        margin-top: 3rem;
-        @include tablet {
-            position: absolute;
-            right: 5%;
-            top: 0;
-            height: 1.25rem;
+        
+        &--mobile {
+            margin-bottom: 1rem;
+            margin-top: 3rem;
+            @include tablet {
+                display: none;
+            }
+        }
+        &--tablet {
+            display: none;
+            @include tablet {
+                display: block;
+                margin-left: auto;
+                margin-right: 1rem;
+            }
+            @include desktop {
+                margin-right: 0;
+            }
         }
     }
-    &__copyright {
-        @include tablet {
-            padding-top: 1.5rem;
-        }
+
+&__copyright {
+    @include tablet {
+        padding-top: 1.5rem;
     }
 }
+}
+
 
