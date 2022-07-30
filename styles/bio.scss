@@ -62,9 +62,10 @@ body {
         color: $color-accent;
         text-decoration: none;
         width: 50%;
-        transition: 0.5s;
+        transition: 0.5s ;
         &:hover {
             color: $color-dark-sec;
+            text-shadow: 1px 1px $color-accent;
             font-weight: 800;
         }
     } 
@@ -76,6 +77,8 @@ body {
         transition: 0.5s;
         &:hover {
             border-bottom: 4px solid $color-dark-sec;
+            text-shadow: 1px 1px $color-accent;
+            box-shadow: 0px 1px $color-accent;
         }
         @include tablet {
             width: auto;
