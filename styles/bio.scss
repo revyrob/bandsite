@@ -253,6 +253,39 @@ body {
     }
 }
 
+.comment {
+    @extend .photo-gallery;
+        margin-top: 0;
+    &__title {
+        @extend .about__title;
+    }
+    &__user-input {
+        @extend .about__container;
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+
+    }
+    &__headings {
+        color: $color-light;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    &__user-image--img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+    }
+    &__user-input--submit{
+        background-color: $color-dark;
+        color: $color-accent;
+        width: 100%;
+    }
+}
+
 .footer {
     background-color: $color-dark;
     color: $color-accent;
