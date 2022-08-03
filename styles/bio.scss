@@ -4,115 +4,17 @@
 @use './partials/variables' as *;
 
 body {
-    font-family: $font-primary;
-    font-weight: normal;
+    @include body;
 }
 
 // navbar css
 .navbar {
-    background-color: $color-dark;
-    &__wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding-top: 1rem;
-        width: 100%;
-        @include tablet {
-            flex-direction: row;
-            padding: 1.75rem;
-            padding-bottom: 0;
-        }
-        @include desktop {
-            @include wrapper ($desktop-width);
-        }
-    }
-    &__logo {
-        height: 2rem;
-        margin-bottom: 1rem;
-        //hover affect of shaking logo when the user hovers over
-        &:hover {
-            animation: tilt-shaking .5s infinite;
-        }
-        @keyframes tilt-shaking {
-            0% { transform: rotate(0deg); }
-            25% { transform: rotate(5deg); }
-            50% { transform: rotate(0eg); }
-            75% { transform: rotate(-5deg); }
-            100% { transform: rotate(0deg); }
-        }
-        @include tablet {
-            height: 1.5rem;
-        }
-    }
-    &__navbar {
-        text-align: center;
-        width: 100%;
-    }
-    &__item-list {
-        display: flex;
-        justify-content: stretch;
-        font-size: 1.25rem;
-        @include tablet {
-            justify-content: left;
-            margin-left: 5rem;
-        }
-    }
-    &__item{
-        color: $color-accent;
-        text-decoration: none;
-        width: 50%;
-        transition: 0.5s;
-        &:hover {
-            color: $color-dark-sec;
-            text-shadow: 1px 1px $color-accent;
-            font-weight: 800;
-        }
-    } 
-    &__active {
-        border-bottom: 4px solid $color-accent;
-        width: 50%;
-        padding-bottom: 1.65rem;
-        font-weight: 800;
-        transition: 0.5s;
-        &:hover {
-            border-bottom: 4px solid $color-dark-sec;
-            text-shadow: 1px 1px $color-accent;
-            box-shadow: 0px 1px $color-accent;
-        }
-        @include tablet {
-            width: auto;
-        }
-    }
+    @include navbar;
 }
 
 // hero css
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), 
-    url(../assets/images/hero-bio.jpg);
-    background-position: center;
-    background-size:cover;
-    min-height: 300px;
-    max-height: 1000px;
-    height: 50vh;
-    @include tablet {
-        height: 70vh;
-    }
-    &__title {
-        color: $color-accent;
-        font-size: 2rem;
-        font-weight: 800;
-        margin: 2rem;
-        @include tablet {
-            font-size: 4rem;
-        }
-        @include desktop {
-            @include wrapper ($desktop-width);
-        }
-    }
+    @include hero;
 }
 
 // about section

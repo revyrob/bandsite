@@ -1,0 +1,25 @@
+@use './partials/reset' as *;
+@use './partials/mixins' as *;
+@use './partials/typography' as *;
+@use './partials/variables' as *;
+
+body {
+    @include body;
+}
+
+// navbar css
+.navbar {
+    @include navbar;
+}
+
+// hero css
+.hero {
+    @include hero;
+    background-image: linear-gradient(to bottom, rgba(248, 242, 242, 0.2), rgba(0, 0, 0, 0.7)), url(../assets/images/hero-shows.jpg);
+    &__subtitle {
+        @extend .hero__title;
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+}
+
