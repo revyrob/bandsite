@@ -127,3 +127,15 @@
         }
     }
 }
+
+@mixin section__title {
+        font-size: 2rem;
+        padding: 2.5rem 0rem 1.5rem;
+        font-weight: 600;
+        @include tablet {
+            padding-bottom: 1rem;
+        }
+        @include desktop {
+            @include wrapper ($desktop-width);
+        }
+}

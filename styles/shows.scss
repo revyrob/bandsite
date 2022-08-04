@@ -23,3 +23,45 @@ body {
     }
 }
 
+.shows {
+    display: flex;
+    flex-direction: column;
+   
+    &__title {
+        @include section__title;
+        margin: 0 2rem;
+        
+    }
+    &__card{
+        padding: 2rem;
+        border-bottom: 1px solid $color-light;
+        
+        &--title {
+            color: $color-light;
+            font-size: 0.9rem;
+            padding-bottom: 1rem;
+        }
+        &--info {
+            font-weight: 600;
+            color: $color-dark;
+            padding-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        &--buy{
+            background-color: $color-dark;
+            color: $color-accent;
+            width: 100%;
+            font-size: 1.1rem;
+            padding: 1rem 0;
+            border-radius: 5px;
+        
+        }
+    }
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+   
+    }
+
+}
+
