@@ -99,7 +99,7 @@ body {
 @media (min-width: 768px) {
   .navbar__wrapper {
     flex-direction: row;
-    padding: 1.75rem;
+    padding: 1.75rem 2rem;
     padding-bottom: 0;
   }
 }
@@ -161,15 +161,18 @@ body {
   text-align: left;
   width: 100%;
 }
+@media (min-width: 768px) {
+  .navbar__navbar {
+    text-align: center;
+  }
+}
 .navbar__item-list {
   display: flex;
-  justify-content: stretch;
   font-size: 1rem;
 }
 @media (min-width: 768px) {
   .navbar__item-list {
-    justify-content: left;
-    margin-left: 5rem;
+    margin-left: 10%;
   }
 }
 .navbar__item {
@@ -237,6 +240,7 @@ body {
 @media (min-width: 768px) {
   .hero__title {
     font-size: 4rem;
+    margin: 0rem 2rem;
   }
 }
 @media (min-width: 1280px) {
@@ -252,6 +256,11 @@ body {
   flex-direction: column;
   margin: 0 1rem;
 }
+@media (min-width: 768px) {
+  .about {
+    margin: 0;
+  }
+}
 .about__title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -263,6 +272,7 @@ body {
   .about__title {
     padding-bottom: 1rem;
     font-size: 2rem;
+    margin-left: 2rem;
   }
 }
 @media (min-width: 1280px) {
@@ -280,6 +290,13 @@ body {
 @media (min-width: 1280px) {
   .about__title {
     max-width: 1280px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .about__wrapper {
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
   }
@@ -297,10 +314,22 @@ body {
     width: 75vw;
   }
 }
+@media (min-width: 1280px) {
+  .about__img {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
 .about__quote {
   margin-top: 1rem;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .about__quote {
+    font-size: 1.5rem;
+  }
 }
 .about__quote--author {
   margin-top: 1rem;
@@ -308,6 +337,7 @@ body {
 @media (min-width: 768px) {
   .about__quote--author {
     font-size: 1rem;
+    margin-top: 0.5rem;
   }
 }
 .about__container, .comment__user-input {
@@ -336,6 +366,11 @@ body {
     padding: 1rem 0 1.5rem;
   }
 }
+@media (min-width: 1280px) {
+  .about__container--quote {
+    width: auto;
+  }
+}
 .about__container--text {
   display: flex;
   flex-direction: column;
@@ -349,9 +384,19 @@ body {
     padding: 1rem 0 1.5rem;
   }
 }
+@media (min-width: 1280px) {
+  .about__container--text {
+    width: auto;
+  }
+}
 .about__subtitle {
   font-size: 1rem;
   font-weight: 600;
+}
+@media (min-width: 768px) {
+  .about__subtitle {
+    font-size: 1.5rem;
+  }
 }
 .about__info {
   margin-top: 1rem;
@@ -379,7 +424,7 @@ body {
 }
 @media (min-width: 768px) {
   .photo-gallery {
-    padding: 1.5rem 2rem;
+    margin: 1.5rem 2rem;
   }
 }
 @media (min-width: 1280px) {
@@ -399,6 +444,7 @@ body {
   .photo-gallery__title {
     padding-bottom: 1rem;
     font-size: 2rem;
+    margin-left: 2rem;
   }
 }
 @media (min-width: 1280px) {
@@ -445,6 +491,18 @@ body {
   justify-content: stretch;
   margin: 0 1rem;
 }
+@media (min-width: 768px) {
+  .comment {
+    margin: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .comment {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
 .comment__title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -455,6 +513,7 @@ body {
   .comment__title {
     padding-bottom: 1rem;
     font-size: 2rem;
+    margin-left: 2rem;
   }
 }
 @media (min-width: 1280px) {
@@ -470,6 +529,11 @@ body {
   justify-content: space-between;
   border-bottom: 1px solid #E1E1E1;
   padding-top: 1rem;
+}
+@media (min-width: 768px) {
+  .comment__wrapper, .comment__previous {
+    margin: 0 5rem;
+  }
 }
 .comment__added {
   display: flex;
@@ -490,6 +554,13 @@ body {
   padding: 1rem 0rem;
   margin: 1rem 0;
   border-radius: 5px;
+}
+@media (min-width: 768px) {
+  .comment__user-input--submit {
+    max-width: 15rem;
+    font-size: 1rem;
+    align-items: flex-end;
+  }
 }
 .comment__unknown-user {
   width: 50px;
@@ -524,10 +595,25 @@ body {
   width: 100%;
   margin-left: 1rem;
 }
+@media (min-width: 1280px) {
+  .form {
+    padding: 1.5rem 0;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
 .form__div {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+@media (min-width: 768px) {
+  .form__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
 .form__headings {
   color: #AFAFAF;
@@ -571,6 +657,7 @@ body {
   .footer__title {
     margin-right: 2rem;
     font-weight: 600;
+    font-size: 2rem;
   }
 }
 .footer__social {
@@ -669,5 +756,6 @@ body {
 @media (min-width: 768px) {
   .footer__copyright {
     padding-top: 1.5rem;
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=bio.css.map */

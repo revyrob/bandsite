@@ -23,6 +23,7 @@ body {
     flex-direction: column;  
     margin: 0 1rem;  
     @include tablet {
+        margin: 0;
     }
     &__title {
         @include section__title;
@@ -32,28 +33,46 @@ body {
             padding-bottom: 1rem;
         }
         @include desktop {
-            @include wrapper ($desktop-width);
+            @include wrapper;
+        }
+    }
+    &__wrapper {
+        @include desktop {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
         }
     }
     &__img--container {
         display: flex;
         align-items: center;
         justify-content: center;
+        
     }
     &__img {
         width: 90vw;
         @include tablet {
             width: 75vw;
         }
+        @include desktop {
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        }
     }
     &__quote {
         margin-top: 1rem;
         display: flex;
-        align-items: flex-start;
+        flex-direction: column;
+        // align-items: flex-start;
+        @include tablet {
+            font-size: 1.5rem;
+        }
         &--author {
             margin-top: 1rem;
             @include tablet {
                 font-size: 1rem;
+                margin-top: 0.5rem;
             }
         }
     }
@@ -65,6 +84,7 @@ body {
             margin: auto;
             padding: 1rem 0 0 0;
         }
+        
         &--quote {
             font-size: 1rem;
             display: flex;
@@ -78,6 +98,9 @@ body {
                 margin: auto;
                 padding: 1rem 0 1.5rem;
             }
+            @include desktop {
+                width: auto;
+            }
         }
         &--text {
             display: flex;
@@ -89,11 +112,17 @@ body {
                 margin: auto;
                 padding: 1rem 0 1.5rem;   
             }
+            @include desktop {
+                width: auto;
+            }
         }
     }
     &__subtitle {
         font-size: 1rem;
         font-weight: 600;
+        @include tablet {
+            font-size: 1.5rem;
+        }
     }
     &__info {
         margin-top: 1rem;
@@ -118,7 +147,7 @@ body {
     flex-direction: column;
     margin-top: 3rem;
     @include tablet {
-        padding: 1.5rem 2rem;
+        margin: 1.5rem 2rem;
     }
     @include desktop {
         padding: 1.5rem 0;
@@ -158,6 +187,13 @@ body {
     flex-direction: column;
     justify-content: stretch;
     margin: 0 1rem;
+    @include tablet {
+        margin: 0;
+    }
+    @include desktop {
+        // padding: 1.5rem 0;
+        @include wrapper ($desktop-width);
+    }
     
     &__title {
         @include section__title;
@@ -172,10 +208,12 @@ body {
         justify-content: space-between;
         border-bottom: 1px solid $color-light-sec;
         padding-top: 1rem;
+        @include tablet {
+            margin: 0 5rem;
+        }
     }
     &__previous{
-        @extend 
-        .comment__wrapper;
+        @extend .comment__wrapper;
     }
     &__added {
         display: flex;
@@ -197,6 +235,11 @@ body {
         padding: 1rem 0rem;
         margin: 1rem 0;
         border-radius: 5px;
+        @include tablet{
+            max-width: 15rem;
+            font-size: 1rem;
+            align-items:flex-end ;
+        }
     }
     &__unknown-user {
         width: 50px;
@@ -231,10 +274,21 @@ body {
 .form {
     width: 100%;
     margin-left: 1rem;
+    @include desktop {
+        padding: 1.5rem 0;
+        @include wrapper ($desktop-width);
+    }
     &__div {
         display: flex;
         flex-direction: column;
         width: 100%;
+    }
+    &__wrapper {
+        @include tablet {
+            display: flex;
+            flex-direction: column;   
+            align-items: flex-end;
+        }
     }
     &__headings {
         color: $color-light;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <link rel="stylesheet" href="./styles/bio.css">
     
     <title>Bandsite | Bio</title>
@@ -39,15 +39,16 @@
             <h2 class="about__title">
                 About the Musicians
             </h2>
+            <div class="about__wrapper">
             <div class="about__img--container">
                 <img class="about__img" src="./assets/images/band.jpg" alt="the bees knees in concert">
             </div>
             <div class="about__container--quote">
                 <p class="about__quote">
                     “We push each other to be the best. It’s not uncommon for one of us to say ‘this needs to be better, back to the drawing board’”
-                    <p class="about__quote--author">
+                    <span class="about__quote--author">
                         -Bryan Teddy, lead vocalist of The Bees Knees
-                    </p>
+                    </span>
                 </p> 
             </div>
             
@@ -65,7 +66,7 @@
                     From there, the band has soared, gaining international recognition and ranking in the top 10 on the Poster Charts. New fans immediately fell in love with the band’s original and organic attitude, solidifying their place as one of the hottest and fastest up and coming acts of this century. Fans affectionately refer to themselves as “The Hive” and are drawn to their candid and authentic performances on stage. Looking forward to touring in the future, The Bees Knees are currently recording their second studio album, looking to be released in late 2021.
                 </p>
             </div>
-            
+        </div>
         </section>
         
         <!-- section for photo gallery -->
@@ -96,19 +97,21 @@
                     <div class="comment__known-user"></div>
                 </div>
                 <form method="get" class="form">
-                    <div class="form__div">
-                        <label class="form__headings">NAME</label>
-                        <input class="form__input" type="text" name="name" placeholder="Enter your name">
-                    </div>
-                    <div class="form__div">
-                        <label class="form__headings">COMMENT</label>
-                        <textarea class="form__input--comment" type="text" name="comment" placeholder="Add a new comment"></textarea>
-                    </div>
+                    <div class="form__wrapper">
+                        <div class="form__div">
+                            <label class="form__headings">NAME</label>
+                            <input class="form__input" type="text" name="name" placeholder="Enter your name">
+                        </div>
+                        <div class="form__div">
+                            <label class="form__headings">COMMENT</label>
+                            <textarea class="form__input--comment" type="text" name="comment" placeholder="Add a new comment"></textarea>
+                        </div>
                     
                     <button type="submit" class="comment__user-input--submit">COMMENT</button>
+                </div>
                 </form>
             </div>
-
+            
             <!-- past comments  from Connor-->
             <div class="comment__added">
                 <!-- added comments from user -->
@@ -130,8 +133,8 @@
                         this for what it is and what it contains.</p>
                     </div>
                 </div>
-
- <!-- past comments  from Emilie-->
+                
+                <!-- past comments  from Emilie-->
                 <div class="comment__wrapper">
                     <div class="comment__user-image">
                         <div class="comment__unknown-user"></div>
@@ -148,99 +151,99 @@
                             an incredible day.</p>
                         </div>
                     </div>
-                <!-- past comments  from Miles-->
-                <div class="comment__wrapper">
-                    <div class="comment__user-image">
-                        <div class="comment__unknown-user"></div>
-                    </div>
-                    <div class="comment__area">
-                        <div class="comment__user">
-                            <h4 class="comment__name">Miles Acosta</h4>
-                            <p class="comment__timeStamp">12/20/2020</p>
+                    <!-- past comments  from Miles-->
+                    <div class="comment__wrapper">
+                        <div class="comment__user-image">
+                            <div class="comment__unknown-user"></div>
                         </div>
-                        <p class="comment__comment">I can t stop listening. Every time I hear 
-                            one of their songs the vocals it gives 
-                            me goosebumps. Shivers straight down 
-                            my spine. What a beautiful expression of 
-                            creativity. Can t get enough.</p>
+                        <div class="comment__area">
+                            <div class="comment__user">
+                                <h4 class="comment__name">Miles Acosta</h4>
+                                <p class="comment__timeStamp">12/20/2020</p>
+                            </div>
+                            <p class="comment__comment">I can t stop listening. Every time I hear 
+                                one of their songs the vocals it gives 
+                                me goosebumps. Shivers straight down 
+                                my spine. What a beautiful expression of 
+                                creativity. Can t get enough.</p>
+                            </div>
                         </div>
-                    </div>
-            </section>
-        </main>
-        
-        <footer class="footer">
-            <!-- footer with title/social section -->
-            <div class="footer__wrapper">
-                <div class="footer__container--social">
-                    <h2 class="footer__title">
-                        Get in Touch
-                    </h2>
-                    <div class="footer__social">
-                        <div class="footer__social-icon"><a href="https://instagram.com" target="_blank"><img src="./assets/icons/Icon-instagram.svg" alt="instagram icon"></a></div>
-                        <div class="footer__social-icon"><a href="https://facebook.com" target="_blank"><img src="./assets/icons/Icon-facebook.svg" alt="facebook icon"></a></div>
-                        <div class="footer__social-icon"><a href="https://twitter.com" target="_blank"><img src="./assets/icons/Icon-twitter.svg" alt="twitter icon"></a></div>       
-                    </div>
-                    <!-- footer logo for mobile at bottom of page -->
-                    <div class="footer__logo-img--tablet">
-                        <img class="footer__logo-img" src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo">
-                    </div>
-                </div>
+                    </section>
+                </main>
                 
-                
-                <!-- footer section with different offices -->
-                <div class="footer__container">
-                    <div class="footer__card">
-                        <div class="footer__card--agent">
-                            <p>Cam Adams</p>
-                            <p>503 Broadway Penthouse,</p>
+                <footer class="footer">
+                    <!-- footer with title/social section -->
+                    <div class="footer__wrapper">
+                        <div class="footer__container--social">
+                            <h2 class="footer__title">
+                                Get in Touch
+                            </h2>
+                            <div class="footer__social">
+                                <div class="footer__social-icon"><a href="https://instagram.com" target="_blank"><img src="./assets/icons/Icon-instagram.svg" alt="instagram icon"></a></div>
+                                <div class="footer__social-icon"><a href="https://facebook.com" target="_blank"><img src="./assets/icons/Icon-facebook.svg" alt="facebook icon"></a></div>
+                                <div class="footer__social-icon"><a href="https://twitter.com" target="_blank"><img src="./assets/icons/Icon-twitter.svg" alt="twitter icon"></a></div>       
+                            </div>
+                            <!-- footer logo for mobile at bottom of page -->
+                            <div class="footer__logo-img--tablet">
+                                <img class="footer__logo-img" src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo">
+                            </div>
                         </div>
-                        <div class="footer__card--address">
-                            <p>The Bees Knees Management</p>
-                            <p>New York, NY 10012, USA</p>
+                        
+                        
+                        <!-- footer section with different offices -->
+                        <div class="footer__container">
+                            <div class="footer__card">
+                                <div class="footer__card--agent">
+                                    <p>Cam Adams</p>
+                                    <p>503 Broadway Penthouse,</p>
+                                </div>
+                                <div class="footer__card--address">
+                                    <p>The Bees Knees Management</p>
+                                    <p>New York, NY 10012, USA</p>
+                                </div>
+                                <div class="footer__card--email">
+                                    <a href="mailto:info@thebeeskeens.com">info@thebeeskeens.com</a>
+                                </div>  
+                            </div>
+                            <div class="footer__card">
+                                <div class="footer__card--agent">
+                                    <p>Pearl Gregg</p>
+                                    <p>Limitless Artist Group</p>
+                                </div>
+                                <div class="footer__card--address">
+                                    <p>Booking Agent for</p>
+                                    <p>US / South America / Japan</p>
+                                </div>
+                                <div class="footer__card--email">
+                                    <a href="mailto:pearl.gregg@limitlessag.com">pearl.gregg@limitlessag.com</a>
+                                </div>
+                            </div>
+                            <div class="footer__card">
+                                <div class="footer__card--agent">
+                                    <p>Carson Whyte</p>
+                                    <p>ARCH Entertainment</p>
+                                </div>
+                                <div class="footer__card--address">
+                                    <p>Booking Agent for</p>
+                                    <p>UK / EU / AU</p>
+                                </div>
+                                <div class="footer__card--email">
+                                    <a href="mailto:whyte@archentertainment.com">cwhyte@archentertainment.com</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="footer__card--email">
-                            <a href="mailto:info@thebeeskeens.com">info@thebeeskeens.com</a>
-                        </div>  
+                        
+                        <!-- footer logo for mobile at bottom of page -->
+                        <div class="footer__logo-img--mobile">
+                            <img class="footer__logo-img" src="./assets/logos/Logo-bandsite.svg" alt="logo bandiste">
+                        </div>
+                        
+                        <!-- footer copyright-->
+                        <p class="footer__copyright">Copyright The Bees Knees ©️ All Rights Reserved</p>
                     </div>
-                    <div class="footer__card">
-                        <div class="footer__card--agent">
-                            <p>Pearl Gregg</p>
-                            <p>Limitless Artist Group</p>
-                        </div>
-                        <div class="footer__card--address">
-                            <p>Booking Agent for</p>
-                            <p>US / South America / Japan</p>
-                        </div>
-                        <div class="footer__card--email">
-                            <a href="mailto:pearl.gregg@limitlessag.com">pearl.gregg@limitlessag.com</a>
-                        </div>
-                    </div>
-                    <div class="footer__card">
-                        <div class="footer__card--agent">
-                            <p>Carson Whyte</p>
-                            <p>ARCH Entertainment</p>
-                        </div>
-                        <div class="footer__card--address">
-                            <p>Booking Agent for</p>
-                            <p>UK / EU / AU</p>
-                        </div>
-                        <div class="footer__card--email">
-                            <a href="mailto:whyte@archentertainment.com">cwhyte@archentertainment.com</a>
-                        </div>
-                    </div>
-                </div>
+                </footer>
                 
-                <!-- footer logo for mobile at bottom of page -->
-                <div class="footer__logo-img--mobile">
-                    <img class="footer__logo-img" src="./assets/logos/Logo-bandsite.svg" alt="logo bandiste">
-                </div>
+                <script src="./scripts/index.page.js"></script>
                 
-                <!-- footer copyright-->
-                <p class="footer__copyright">Copyright The Bees Knees ©️ All Rights Reserved</p>
-            </div>
-        </footer>
-        
-        <script src="./scripts/index.page.js"></script>
-        
-    </body>
-    </html>
+            </body>
+            </html>

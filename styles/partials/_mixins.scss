@@ -35,7 +35,7 @@
         width: 100%;
         @include tablet {
             flex-direction: row;
-            padding: 1.75rem;
+            padding: 1.75rem 2rem;
             padding-bottom: 0;
         }
         @include desktop {
@@ -61,19 +61,19 @@
         }
     }
     &__navbar {
-        text-align: left;
+        text-align: center;
         width: 100%;
         @include tablet{
-            
+            text-align: center;
         }
     }
     &__item-list {
         display: flex;
-        justify-content: stretch;
+        justify-content: center;
+        align-items: center;
         font-size: 1rem;
         @include tablet {
-            justify-content: left;
-            margin-left: 5rem;
+            margin-left: 10%;
         }
     }
     &__item{
@@ -133,6 +133,8 @@
         margin: 0rem 1rem;
         @include tablet {
             font-size: 4rem;
+            margin: 0rem 2rem;
+
         }
         @include desktop {
             @include wrapper ($desktop-width);
@@ -148,7 +150,7 @@
         @include tablet {
             padding-bottom: 1rem;
             font-size: 2rem;
-            
+            margin-left: 2rem;
         }
         @include desktop {
             @include wrapper ($desktop-width);
@@ -174,6 +176,7 @@
         @include tablet {
             margin-right: 2rem;
             font-weight: 600;
+            font-size: 2rem;
         }
     }
     &__social {
@@ -263,6 +266,7 @@
     font-size: 0.8rem;
     @include tablet {
         padding-top: 1.5rem;
+        font-size: 1rem;
     }
 }
 }
