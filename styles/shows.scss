@@ -16,17 +16,46 @@ body {
 .hero {
     @include hero;
     background-image: linear-gradient(to bottom, rgba(248, 242, 242, 0.2), rgba(0, 0, 0, 0.7)), url(../assets/images/hero-shows.jpg);
+    flex-wrap: wrap;
+    min-height: 400px;
+    height: 60vh;
+    @include tablet {
+        height: 80vh;
+    }
+    &__title {
+        @include tablet {
+        font-size: 3rem;
+        margin-top: 0;
+        width: 60%;
+        }
+    }
     &__subtitle {
         @extend .hero__title;
         font-size: 1.25rem;
         font-weight: 400;
+        @include tablet {
+            margin-top: 2rem;
+            font-weight: 600;;
+        }
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    &__music {
+        width: 80%;
+       margin-left: 2rem;
+       margin-bottom: 2rem;
+       @include tablet {
+        width: 50%;
+       }
     }
 }
 
 .shows {
     display: flex;
     flex-direction: column;
-   
+
     &__title {
         @include section__title;
         margin: 0 2rem;
@@ -35,17 +64,40 @@ body {
     &__card{
         padding: 2rem;
         border-bottom: 1px solid $color-light;
+        &--titleAcross {
+            @extend .shows__title;
+            font-size: 1.1rem;
+            margin: 0;
+            color:blue;
+        }
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+            
+        }
         
         &--title {
             color: $color-light;
             font-size: 0.9rem;
             padding-bottom: 1rem;
+            @include tablet {
+                display: none;
+                
+            }
+            
         }
         &--info {
             font-weight: 600;
             color: $color-dark;
             padding-bottom: 1.5rem;
             font-size: 1.1rem;
+            @include tablet {
+                width: 25%;
+            }
+            
+            
         }
         &--buy{
             background-color: $color-dark;
@@ -54,14 +106,52 @@ body {
             font-size: 1.1rem;
             padding: 1rem 0;
             border-radius: 5px;
-        
+            @include tablet {
+                width: 25%;
+            }
         }
+        
     }
     &__wrapper{
         display: flex;
         flex-direction: column;
    
     }
+    &__topTitle {
+        @extend .shows__card;
+        display: none;
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            width: 70%;
+            border: none;
+        &--title {
+            font-weight: 600;
+            color: $color-light;
+            // padding-bottom: 1.5rem;
+            font-size: 1.1rem;
+            @include tablet {
+                width: 25%;
+            }
+        }
+        }
+    }
 
 }
+
+// .topTitle {
+//     display: none;
+//     @include tablet {
+//         display: flex;
+//         flex-direction: row;
+//         width: 70%;
+//         border: none;
+        
+//     }
+// }
+
+.footer {
+    @include footer;  
+}
+
 

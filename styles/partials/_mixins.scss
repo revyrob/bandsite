@@ -117,8 +117,8 @@
     &__title {
         color: $color-accent;
         font-size: 2rem;
-        font-weight: 800;
-        margin: 2rem;
+        font-weight: 600;
+        margin: 2rem 2rem 1rem;
         @include tablet {
             font-size: 4rem;
         }
@@ -129,13 +129,121 @@
 }
 
 @mixin section__title {
-        font-size: 2rem;
+        font-size: 1.75rem;
         padding: 2.5rem 0rem 1.5rem;
         font-weight: 600;
+        margin-left: 1rem;
         @include tablet {
             padding-bottom: 1rem;
         }
         @include desktop {
             @include wrapper ($desktop-width);
         }
+}
+
+@mixin footer {
+    background-color: $color-dark;
+    color: $color-accent;
+    padding: 1.5rem;
+    line-height: 1.5rem;
+    position: relative;
+    &__wrapper {
+        @include desktop {
+            padding: 0;
+            @include wrapper ($desktop-width);
+        }
+    }
+    &__title {
+        font-size: 2.35rem;
+        font-weight: 800;
+        padding: 1.75rem 0;
+        @include tablet {
+            margin-right: 2rem;
+            font-weight: 600;
+        }
+    }
+    &__social {
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        align-items:flex-start;
+        justify-content: space-between;
+        min-width: 13rem;
+        width: 30%;
+        @include tablet {
+            max-width: 10rem;
+        }
+    }
+    &__social-icon {
+        img {
+            height: 2rem;
+            //added animation for the social icons when they are hovered
+            transition: 0.5s;
+            &:hover {
+                height: 3rem;
+            }
+        }
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        @include desktop {
+            width: 75%;
+        }
+        &--social {
+            display: flex;
+            flex-direction: column;
+            @include tablet {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+    }
+    &__card--agent {
+        margin: 1rem 0rem;
+        font-weight: 600;
+    }
+    &__card--address {
+        margin-bottom: 1rem;
+    }
+    &__card--email {
+        margin-bottom: 1rem;
+        a {
+            text-decoration: none;
+            color: $color-accent;
+        }
+    }
+    
+    &__logo-img {
+        height: 1.75rem;
+        
+        &--mobile {
+            margin-bottom: 1rem;
+            margin-top: 3rem;
+            @include tablet {
+                display: none;
+            }
+        }
+        &--tablet {
+            display: none;
+            @include tablet {
+                display: block;
+                margin-left: auto;
+                margin-right: 1rem;
+            }
+            @include desktop {
+                margin-right: 0;
+            }
+        }
+    }
+
+&__copyright {
+    @include tablet {
+        padding-top: 1.5rem;
+    }
+}
 }

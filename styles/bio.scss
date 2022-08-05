@@ -25,9 +25,8 @@ body {
     @include tablet {
     }
     &__title {
-        font-size: 2rem;
-        padding: 2.5rem 0rem 1.5rem;
-        font-weight: 600;
+        @include section__title;
+        margin: 0;
         @include tablet {
             padding-bottom: 1rem;
         }
@@ -66,7 +65,7 @@ body {
             padding: 1rem 0 0 0;
         }
         &--quote {
-            font-size: 1.5rem;
+            font-size: 1rem;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -92,7 +91,7 @@ body {
         }
     }
     &__subtitle {
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 600;
     }
     &__info {
@@ -125,9 +124,9 @@ body {
         @include wrapper ($desktop-width);
     }
     &__title {
-        margin-left: 2rem;
-        font-size: 2rem;
-        font-weight: bold;
+        // font-size: 2rem;
+        // font-weight: bold;
+        @include section__title;
         @include tablet {
             margin-left: 0;
         }
@@ -156,10 +155,14 @@ body {
 }
 
 .comment {
-    @extend .photo-gallery;
-        margin-top: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: stretch;
+   margin: 0 1rem;
+        
     &__title {
-        @extend .about__title;
+        @include section__title;
+        margin: 0;
     }
     &__user-input {
         @extend .about__container;
@@ -167,15 +170,11 @@ body {
     &__wrapper {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: left;
-
+        justify-content: space-between;
+        border-bottom: 1px solid $color-light-sec;
+        padding: 1rem;
     }
-    &__headings {
-        color: $color-light;
-        font-weight: 600;
-        font-size: 0.9rem;
-    }
+    
     &__user-image--img {
         height: 50px;
         width: 50px;
@@ -185,113 +184,65 @@ body {
         background-color: $color-dark;
         color: $color-accent;
         width: 100%;
+        padding: 1rem 0rem;
+        margin: 1rem 0;
+        border-radius: 5px;
+    }
+    &__unknown-user {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: $color-light-sec;
+    }
+    &__area {
+        line-height: 1.5rem;
+        
+        margin-left: 1rem;
+    }
+    &__previous {
+        display: flex;
+        flex-direction: column;
+    }
+    &__user {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &__timeStamp {
+        color: $color-light;
+    }
+}
+.form {
+    width: 100%;
+    margin-left: 1rem;
+    &__div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    &__headings {
+        color: $color-light;
+        font-size: 0.9rem;
+        padding-bottom: .5rem;
+        
+    }
+    &__comment {
+        color: $color-light;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        &--comment {
+            @extend .form__comment;
+            height: 6rem;
+        }
     }
 }
 
 .footer {
-    background-color: $color-dark;
-    color: $color-accent;
-    padding: 1.5rem;
-    line-height: 1.5rem;
-    position: relative;
-    &__wrapper {
-        @include desktop {
-            padding: 0;
-            @include wrapper ($desktop-width);
-        }
-    }
-    &__title {
-        font-size: 2.35rem;
-        font-weight: 800;
-        padding: 1.75rem 0;
-        @include tablet {
-            margin-right: 2rem;
-            font-weight: 600;
-        }
-    }
-    &__social {
-        padding: 1rem 0;
-        display: flex;
-        flex-direction: row;
-        align-items:flex-start;
-        justify-content: space-between;
-        width:30%;
-        @include tablet {
-            max-width: 10rem;
-        }
-    }
-    &__social-icon {
-        img {
-            height: 2rem;
-            //added animation for the social icons when they are hovered
-            transition: 0.5s;
-            &:hover {
-                height: 3rem;
-            }
-        }
-    }
-    &__container {
-        display: flex;
-        flex-direction: column;
-        @include tablet {
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        @include desktop {
-            width: 75%;
-        }
-        &--social {
-            display: flex;
-            flex-direction: column;
-            @include tablet {
-                flex-direction: row;
-                align-items: center;
-            }
-        }
-    }
-    &__card--agent {
-        margin: 1rem 0rem;
-        font-weight: 600;
-    }
-    &__card--address {
-        margin-bottom: 1rem;
-    }
-    &__card--email {
-        margin-bottom: 1rem;
-        a {
-            text-decoration: none;
-            color: $color-accent;
-        }
-    }
-    
-    &__logo-img {
-        height: 1.75rem;
-        
-        &--mobile {
-            margin-bottom: 1rem;
-            margin-top: 3rem;
-            @include tablet {
-                display: none;
-            }
-        }
-        &--tablet {
-            display: none;
-            @include tablet {
-                display: block;
-                margin-left: auto;
-                margin-right: 1rem;
-            }
-            @include desktop {
-                margin-right: 0;
-            }
-        }
-    }
-
-&__copyright {
-    @include tablet {
-        padding-top: 1.5rem;
-    }
-}
+    @include footer;  
 }
 
-
+h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
