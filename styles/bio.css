@@ -111,7 +111,7 @@ body {
   }
 }
 .navbar__logo {
-  height: 2rem;
+  height: 1.5rem;
   margin-bottom: 1rem;
 }
 .navbar__logo:hover {
@@ -164,7 +164,7 @@ body {
 .navbar__item-list {
   display: flex;
   justify-content: stretch;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 @media (min-width: 768px) {
   .navbar__item-list {
@@ -187,7 +187,7 @@ body {
   border-bottom: 4px solid #FFFFFF;
   width: 50%;
   padding-bottom: 1.65rem;
-  font-weight: 800;
+  font-weight: 600;
   transition: 0.5s;
 }
 .navbar__active:hover {
@@ -221,7 +221,7 @@ body {
   color: #FFFFFF;
   font-size: 2rem;
   font-weight: 600;
-  margin: 2rem 2rem 1rem;
+  margin: 0rem 1rem;
 }
 @media (min-width: 768px) {
   .hero__title {
@@ -239,13 +239,13 @@ body {
 .about {
   display: flex;
   flex-direction: column;
-  margin: 0 2rem;
+  margin: 0 1rem;
 }
 .about__title {
-  font-size: 1.75rem;
-  padding: 2.5rem 0rem 1.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-left: 1rem;
+  padding: 1.5rem 0 1rem;
   margin: 0;
 }
 @media (min-width: 768px) {
@@ -379,8 +379,7 @@ body {
   }
 }
 .photo-gallery__title {
-  font-size: 1.75rem;
-  padding: 2.5rem 0rem 1.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-left: 1rem;
 }
@@ -415,7 +414,7 @@ body {
 }
 .photo-gallery__images--img {
   width: 90vw;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   filter: brightness(40%);
 }
 .photo-gallery__images--img:hover {
@@ -434,8 +433,7 @@ body {
   margin: 0 1rem;
 }
 .comment__title {
-  font-size: 1.75rem;
-  padding: 2.5rem 0rem 1.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-left: 1rem;
   margin: 0;
@@ -452,17 +450,24 @@ body {
     margin: 0 auto;
   }
 }
-.comment__wrapper {
+.comment__wrapper, .comment__previous {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid #E1E1E1;
-  padding: 1rem;
+  padding-top: 1rem;
 }
-.comment__user-image--img {
+.comment__added {
+  display: flex;
+  flex-direction: column;
+}
+.comment__known-user {
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  background-image: url("../assets/images/Mohan-muruge.jpg");
+  background-size: cover;
+  margin-top: 20px;
 }
 .comment__user-input--submit {
   background-color: #323232;
@@ -482,14 +487,20 @@ body {
   line-height: 1.5rem;
   margin-left: 1rem;
 }
-.comment__previous {
-  display: flex;
-  flex-direction: column;
-}
 .comment__user {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-bottom: 0.5rem;
+}
+.comment__name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.comment__comment {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
 }
 .comment__timeStamp {
   color: #AFAFAF;
@@ -506,17 +517,20 @@ body {
 }
 .form__headings {
   color: #AFAFAF;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   padding-bottom: 0.5rem;
 }
-.form__comment, .form__comment--comment {
-  color: #AFAFAF;
+.form__input, .form__input--comment {
+  font-family: "AvenirNext LT Pro", sans-serif;
+  color: #323232;
   font-size: 0.9rem;
   margin-bottom: 1rem;
   border-radius: 5px;
+  border: 1px solid #AFAFAF;
+  padding: 1rem;
 }
-.form__comment--comment {
-  height: 6rem;
+.form__input--comment {
+  height: 7rem;
 }
 
 .footer {
@@ -535,9 +549,9 @@ body {
   }
 }
 .footer__title {
-  font-size: 2.35rem;
-  font-weight: 800;
-  padding: 1.75rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem 0;
 }
 @media (min-width: 768px) {
   .footer__title {
@@ -546,12 +560,12 @@ body {
   }
 }
 .footer__social {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  min-width: 13rem;
+  min-width: 7.5rem;
   width: 30%;
 }
 @media (min-width: 768px) {
@@ -560,7 +574,7 @@ body {
   }
 }
 .footer__social-icon img {
-  height: 2rem;
+  height: 1.5rem;
   transition: 0.5s;
 }
 .footer__social-icon img:hover {
@@ -591,6 +605,9 @@ body {
     align-items: center;
   }
 }
+.footer__card {
+  font-size: 0.9rem;
+}
 .footer__card--agent {
   margin: 1rem 0rem;
   font-weight: 600;
@@ -606,10 +623,10 @@ body {
   color: #FFFFFF;
 }
 .footer__logo-img {
-  height: 1.75rem;
+  height: 1.25rem;
 }
 .footer__logo-img--mobile {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   margin-top: 3rem;
 }
 @media (min-width: 768px) {
@@ -632,13 +649,11 @@ body {
     margin-right: 0;
   }
 }
+.footer__copyright {
+  font-size: 0.8rem;
+}
 @media (min-width: 768px) {
   .footer__copyright {
     padding-top: 1.5rem;
   }
-}
-
-h4 {
-  font-size: 1rem;
-  font-weight: 600;
 }/*# sourceMappingURL=bio.css.map */

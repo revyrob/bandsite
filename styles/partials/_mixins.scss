@@ -42,7 +42,7 @@
         }
     }
     &__logo {
-        height: 2rem;
+        height: 1.5rem;
         margin-bottom: 1rem;
         //hover affect of shaking logo when the user hovers over
         &:hover {
@@ -66,7 +66,7 @@
     &__item-list {
         display: flex;
         justify-content: stretch;
-        font-size: 1.25rem;
+        font-size: 1rem;
         @include tablet {
             justify-content: left;
             margin-left: 5rem;
@@ -87,7 +87,7 @@
         border-bottom: 4px solid $color-accent;
         width: 50%;
         padding-bottom: 1.65rem;
-        font-weight: 800;
+        font-weight: 600;
         transition: 0.5s;
         &:hover {
             border-bottom: 4px solid $color-dark-sec;
@@ -118,7 +118,7 @@
         color: $color-accent;
         font-size: 2rem;
         font-weight: 600;
-        margin: 2rem 2rem 1rem;
+        margin: 0rem 1rem;
         @include tablet {
             font-size: 4rem;
         }
@@ -129,8 +129,8 @@
 }
 
 @mixin section__title {
-        font-size: 1.75rem;
-        padding: 2.5rem 0rem 1.5rem;
+        font-size: 1.5rem;
+        // padding: 2.5rem 0rem 1.5rem;
         font-weight: 600;
         margin-left: 1rem;
         @include tablet {
@@ -154,21 +154,21 @@
         }
     }
     &__title {
-        font-size: 2.35rem;
-        font-weight: 800;
-        padding: 1.75rem 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding: 1rem 0;
         @include tablet {
             margin-right: 2rem;
             font-weight: 600;
         }
     }
     &__social {
-        padding: 1rem 0;
+        padding: 0.5rem 0;
         display: flex;
         flex-direction: row;
         align-items:flex-start;
         justify-content: space-between;
-        min-width: 13rem;
+        min-width: 7.5rem;
         width: 30%;
         @include tablet {
             max-width: 10rem;
@@ -176,7 +176,7 @@
     }
     &__social-icon {
         img {
-            height: 2rem;
+            height: 1.5rem;
             //added animation for the social icons when they are hovered
             transition: 0.5s;
             &:hover {
@@ -203,26 +203,30 @@
             }
         }
     }
-    &__card--agent {
-        margin: 1rem 0rem;
-        font-weight: 600;
-    }
-    &__card--address {
-        margin-bottom: 1rem;
-    }
-    &__card--email {
-        margin-bottom: 1rem;
-        a {
-            text-decoration: none;
-            color: $color-accent;
+    &__card {
+        font-size: 0.9rem;
+        &--agent {
+            margin: 1rem 0rem;
+            font-weight: 600;
+        }
+        &--address {
+            margin-bottom: 1rem;
+        }
+        &--email {
+            margin-bottom: 1rem;
+            a {
+                text-decoration: none;
+                color: $color-accent;
+            }
         }
     }
+   
     
     &__logo-img {
-        height: 1.75rem;
+        height: 1.25rem;
         
         &--mobile {
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             margin-top: 3rem;
             @include tablet {
                 display: none;
@@ -242,6 +246,7 @@
     }
 
 &__copyright {
+    font-size: 0.8rem;
     @include tablet {
         padding-top: 1.5rem;
     }
