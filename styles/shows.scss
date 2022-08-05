@@ -15,10 +15,12 @@ body {
 // hero css
 .hero {
     @include hero;
+    justify-content: left;
+    align-items: center;
     background-image: linear-gradient(to bottom, rgba(248, 242, 242, 0.2), rgba(0, 0, 0, 0.7)), url(../assets/images/hero-shows.jpg);
     flex-wrap: wrap;
-    min-height: 400px;
-    height: 60vh;
+    min-height: 325px;
+    height: 50vh;
     @include tablet {
         height: 80vh;
     }
@@ -31,6 +33,7 @@ body {
     }
     &__subtitle {
         @extend .hero__title;
+        margin-bottom: 1rem;
         font-size: 1.25rem;
         font-weight: 400;
         @include tablet {
@@ -41,13 +44,19 @@ body {
     &__wrapper {
         display: flex;
         flex-direction: column;
+        
     }
     &__music {
-        width: 80%;
-       margin-left: 2rem;
-       margin-bottom: 2rem;
+        width: 90%;
+       margin-left: 1rem;
+       margin-bottom: 1rem;
+       height: 6rem;
        @include tablet {
         width: 50%;
+        margin-bottom: 2rem;
+       }
+       @include desktop{
+        width: 30%;
        }
     }
 }
@@ -55,21 +64,26 @@ body {
 .shows {
     display: flex;
     flex-direction: column;
-
+    @include tablet {
+        margin: 1rem;
+    }
+    @include desktop {
+        flex-direction: row;
+        justify-content: stretch;
+    }
     &__title {
         @include section__title;
-        margin: 0 2rem;
-        
-    }
-    &__card{
-        padding: 2rem;
-        border-bottom: 1px solid $color-light;
-        &--titleAcross {
-            @extend .shows__title;
-            font-size: 1.1rem;
+        margin: 2rem 1rem;
+        @include desktop {
+            width:30%;
             margin: 0;
-            color:blue;
         }
+    }
+   
+    &__card{
+        padding: 1rem;
+        border-bottom: 1px solid $color-light;
+        
         @include tablet {
             display: flex;
             flex-direction: row;
@@ -115,12 +129,16 @@ body {
     &__wrapper{
         display: flex;
         flex-direction: column;
-   
+        @include desktop {
+            width: 90%;
+        }
     }
     &__topTitle {
         @extend .shows__card;
         display: none;
         @include tablet {
+            padding: 0;
+            margin-left: 1rem;
             display: flex;
             flex-direction: row;
             width: 70%;

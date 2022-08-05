@@ -23,6 +23,7 @@
   font-weight: normal;
 }
 
+//i need to figure out in tablet how to get biography closer to bandsite
 @mixin navbar {
   background-color: $color-dark;
     &__wrapper {
@@ -60,8 +61,11 @@
         }
     }
     &__navbar {
-        text-align: center;
+        text-align: left;
         width: 100%;
+        @include tablet{
+            
+        }
     }
     &__item-list {
         display: flex;
@@ -82,11 +86,14 @@
             text-shadow: 1px 1px $color-accent;
             font-weight: 800;
         }
+        @include tablet {
+            width: 30%;
+        }
     } 
     &__active {
         border-bottom: 4px solid $color-accent;
         width: 50%;
-        padding-bottom: 1.65rem;
+        padding-bottom: 1rem;
         font-weight: 600;
         transition: 0.5s;
         &:hover {
@@ -114,6 +121,11 @@
     @include tablet {
         height: 70vh;
     }
+    //i still need the two her items to line up at the bottom
+    @include desktop {
+        align-items: center;
+    justify-content: baseline;
+    }
     &__title {
         color: $color-accent;
         font-size: 2rem;
@@ -135,6 +147,8 @@
         margin-left: 1rem;
         @include tablet {
             padding-bottom: 1rem;
+            font-size: 2rem;
+            
         }
         @include desktop {
             @include wrapper ($desktop-width);
