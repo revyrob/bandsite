@@ -64,13 +64,12 @@
         text-align: center;
         width: 100%;
         @include tablet{
-            text-align: center;
+            text-align: center;;
         }
     }
     &__item-list {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        // justify-content: space-between;
         font-size: 1rem;
         @include tablet {
             margin-left: 10%;

@@ -157,17 +157,6 @@ body {
 
 }
 
-// .topTitle {
-//     display: none;
-//     @include tablet {
-//         display: flex;
-//         flex-direction: row;
-//         width: 70%;
-//         border: none;
-        
-//     }
-// }
-
 .footer {
     @include footer;  
 }
