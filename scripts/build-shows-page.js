@@ -24,7 +24,7 @@ function addShowToDocument(show) {
     const itemTitleDate = document.createElement("h4");
     itemTitleDate.classList.add("shows__card--title");
     itemTitleDate.innerText = "DATE";
-    console.log(itemTitleDate);
+    
 
     //add date from list
     const itemDate = document.createElement("div");
@@ -35,7 +35,7 @@ function addShowToDocument(show) {
     const itemTitleVenue = document.createElement("h4");
     itemTitleVenue.classList.add("shows__card--title");
     itemTitleVenue.innerText = "VENUE";
-    console.log(itemTitleVenue);
+    
 
     //add venue from list
     const itemVenue = document.createElement("div");
@@ -46,7 +46,7 @@ function addShowToDocument(show) {
     const itemTitleLocation = document.createElement("h4");
     itemTitleLocation.classList.add("shows__card--title");
     itemTitleLocation.innerText = "LOCATION";
-    console.log(itemTitleLocation);
+    
 
     //add location from list
     const itemLocation = document.createElement("div");
@@ -71,12 +71,11 @@ function addShowToDocument(show) {
 *Generate the show list
 */
 
-function generateShows(show) {
+function generateShows(showList) {
     const showItem = document.querySelector(".showsList");
     showItem.innerText = '';
-    show.forEach(function(shows){
-        addShowToDocument(shows);
-        console.log(shows);
+    showList.forEach(function(show){
+        addShowToDocument(show);
     });
 }
 

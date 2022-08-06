@@ -9,35 +9,14 @@ const commentEntries = document.querySelector('.comment__added');
 * Journal Form Submit Event and Handler
 *
 ******Use as outline for creating form data*******
-
-<div class="comment__user-image"> - -goes on comment entries
-<div class="comment__unknown-user"></div> - goes in user image
-</div>
-<div class="comment__area"> -- goes on comment entries
-<div class="comment__user"> -- goes in comment area
-<h4 class="comment__name">Connor Walton</h4>-- goes in comment area
-<p class="comment__timeStamp">02/17/2021</p>-- goes in comment area
-</div>
-<p class="comment__comment">This is art. This is inexplicable magic -- goes on comment entries
-expressed in the purest way, everything 
-that makes up this majestic work 
-deserves reverence. Let us appreciate 
-this for what it is and what it contains.</p>
-</div>
-</div>
-
-
-</div>
-</div>
 */
-commentForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const name = event.target.name.value;
-    const comment = event.target.comment.value;
-    
+
+
+//add previous comments to div
+function addCommentToDocument(input) {
     //exterior comment wrapper
     const commentWrapper = document.createElement('div');
-    commentWrapper.classList.add('comment__previous');
+    commentWrapper.classList.add('comment__wrapper');
     
     //img div
     const userImgSection = document.createElement('div');
@@ -58,17 +37,17 @@ commentForm.addEventListener('submit', (event) => {
     //name added to div
     const nameElem = document.createElement('h4');
     nameElem.classList.add('comment__name');
-    nameElem.innerText = name;
+    nameElem.innerText = input.name;
     
     //add time stamp
     const timeStamp = document.createElement('p');
     timeStamp.classList.add('comment__timeStamp');
-    timeStamp.innerText = new Date().toLocaleDateString();
+    timeStamp.innerText = input.date;
     
     //comment added to div
     const commentElem = document.createElement('p');
     commentElem.classList.add('comment__comment');
-    commentElem.innerText = comment;
+    commentElem.innerText = input.comment;
     
     commentEntries.prepend(commentWrapper); // adds to the top
     commentWrapper.appendChild(userImgSection);
@@ -78,8 +57,48 @@ commentForm.addEventListener('submit', (event) => {
     commentUserDiv.appendChild(nameElem);
     commentUserDiv.appendChild(timeStamp);
     commentDiv.appendChild(commentElem);
-      
-    //I need to clear for another entry
-    //I need to figure out how to get the new comments to got to the top
-});
-//reset input areas
+}
+/* 
+*Generate the comment list
+*/
+function generateComments(list) {
+    const commentItem = commentEntries;
+    commentItem.innerText = '';
+    list.forEach(function(comment){
+        addCommentToDocument(comment);
+    });
+}
+
+function clearComments() {
+    //target the name and comment box to clear
+    const clear = document.querySelector('.form__input');
+    const clear2 = document.querySelector('.form__input--comment');
+    console.log(clear.value);
+    clear.value = ' ';
+    clear2.value= ' ';
+}
+
+commentForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const comment = event.target.comment.value;
+    const date = new Date().toLocaleDateString();
+    commentItems.push({name: name, date: date, comment: comment});
+    
+    //generate comments down below
+    generateComments(commentItems);
+    //let a setTimeout run before clearing comments
+    setTimeout(() => {console.log('here is the pause');}, "1000")
+    setTimeout(() => {clearComments();}, "1000")
+})
+
+
+
+//the array for the dates, venues, and location
+const commentItems = [
+    {name: "Connor Walton", date: "02/17/2021", comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."},
+    {name: "Emilie Beach", date: "01/09/2021", comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
+    {name: "Miles Acosta", date: "12/20/2020", comment: "I can t stop listening. Every time I hear one of their songs the vocals it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can t get enough."},
+];
+
+generateComments(commentItems);

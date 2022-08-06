@@ -12,8 +12,8 @@
   }
 }
 
-@mixin wrapper ($max-width) {
-  max-width: $max-width;
+@mixin wrapper ($desktop-width) {
+  max-width: $desktop-width;
   width: 100%;
   margin: 0 auto;
 }
@@ -23,9 +23,8 @@
   font-weight: normal;
 }
 
-//i need to figure out in tablet how to get biography closer to bandsite
 @mixin navbar {
-  background-color: $color-dark;
+    background-color: $color-dark;
     &__wrapper {
         display: flex;
         align-items: center;
@@ -35,7 +34,7 @@
         width: 100%;
         @include tablet {
             flex-direction: row;
-            padding: 1.75rem 2rem;
+            padding: 1.75rem;
             padding-bottom: 0;
         }
         @include desktop {
@@ -43,7 +42,7 @@
         }
     }
     &__logo {
-        height: 1.5rem;
+        height: 2rem;
         margin-bottom: 1rem;
         //hover affect of shaking logo when the user hovers over
         &:hover {
@@ -63,16 +62,14 @@
     &__navbar {
         text-align: center;
         width: 100%;
-        @include tablet{
-            text-align: center;;
-        }
     }
     &__item-list {
         display: flex;
-        // justify-content: space-between;
-        font-size: 1rem;
+        justify-content: stretch;
+        font-size: 1.25rem;
         @include tablet {
-            margin-left: 10%;
+            justify-content: left;
+            margin-left: 5rem;
         }
     }
     &__item{
@@ -85,15 +82,12 @@
             text-shadow: 1px 1px $color-accent;
             font-weight: 800;
         }
-        @include tablet {
-            width: 30%;
-        }
     } 
     &__active {
         border-bottom: 4px solid $color-accent;
         width: 50%;
-        padding-bottom: 1rem;
-        font-weight: 600;
+        padding-bottom: 1.65rem;
+        font-weight: 800;
         transition: 0.5s;
         &:hover {
             border-bottom: 4px solid $color-dark-sec;
@@ -107,10 +101,10 @@
 }
 
 @mixin hero {
-  display: flex;
+    display: flex;
     align-items: center;
     justify-content: left;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), 
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
     url(../assets/images/hero-bio.jpg);
     background-position: center;
     background-size:cover;
@@ -131,7 +125,7 @@
         font-weight: 600;
         margin: 0rem 1rem;
         @include tablet {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin: 0rem 2rem;
 
         }
@@ -143,12 +137,10 @@
 
 @mixin section__title {
         font-size: 1.5rem;
-        // padding: 2.5rem 0rem 1.5rem;
         font-weight: 600;
         margin-left: 1rem;
         @include tablet {
-            padding-bottom: 1rem;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-left: 2rem;
         }
         @include desktop {

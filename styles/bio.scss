@@ -209,10 +209,11 @@ body {
         flex-direction: row;
         justify-content: space-between;
         border-bottom: 1px solid $color-light-sec;
-        padding-top: 1rem;
+        padding: 1rem;
         @include tablet {
             margin: 0 5rem;
         }
+        
     }
     &__previous{
         display: flex;
@@ -277,7 +278,6 @@ body {
     }
     &__comment {
         font-size: 0.9rem;
-        margin-bottom: 1rem;
         border-radius: 5px;
         
     }
@@ -290,7 +290,10 @@ body {
     margin-left: 1rem;
     @include desktop {
         padding: 1.5rem 0;
-        @include wrapper ($desktop-width);
+        max-width: $max-width;
+        width: 95%;
+        margin: 0 auto;
+        margin-left: 1rem;
     }
     &__div {
         display: flex;

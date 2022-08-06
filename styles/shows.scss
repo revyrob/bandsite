@@ -10,25 +10,46 @@ body {
 // navbar css
 .navbar {
     @include navbar;
+    &__item{
+        @include tablet {
+            width: auto;
+        }
+    } 
+    &__active {
+        @include tablet {
+            width: auto;
+        }
+    }
+    &__item-list {
+        @include tablet{
+        align-items: stretch;
+        justify-content: space-between;
+        max-width: 25%;
+        min-width: 15rem;
+        }
+    }
 }
 
 // hero css
 .hero {
     @include hero;
-    justify-content: left;
-    align-items: center;
-    background-image: linear-gradient(to bottom, rgba(248, 242, 242, 0.2), rgba(0, 0, 0, 0.7)), url(../assets/images/hero-shows.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/hero-shows.jpg);
     flex-wrap: wrap;
-    min-height: 325px;
-    height: 50vh;
-    @include tablet {
-        height: 80vh;
+    @include desktop {
+        height: 90vh;
     }
     &__title {
         @include tablet {
-        font-size: 3rem;
-        margin-top: 0;
-        width: 60%;
+        width: 70%;
+        }
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            @include wrapper($desktop-width);
         }
     }
     &__subtitle {
@@ -44,19 +65,22 @@ body {
     &__wrapper {
         display: flex;
         flex-direction: column;
-        
+        @include desktop{
+            width: 50%;
+           }
     }
     &__music {
         width: 90%;
        margin-left: 1rem;
-       margin-bottom: 1rem;
-       height: 6rem;
+       margin-top: 1rem;
        @include tablet {
         width: 50%;
         margin-bottom: 2rem;
+        margin-left: 2rem;
+        margin-top: 2rem;
        }
        @include desktop{
-        width: 30%;
+        width: 50%;
        }
     }
 }
@@ -64,19 +88,25 @@ body {
 .shows {
     display: flex;
     flex-direction: column;
+    margin: 2.5rem 0;
     @include tablet {
         margin: 1rem;
     }
     @include desktop {
         flex-direction: row;
-        justify-content: stretch;
+        @include wrapper ($desktop-width);
+        justify-content: space-between;
+        margin: 4rem auto;
     }
     &__title {
         @include section__title;
-        margin: 2rem 1rem;
+        padding-bottom: 1rem;
+        @include tablet {
+            margin: 2rem 1rem;
+        }
         @include desktop {
-            width:30%;
             margin: 0;
+            width: auto;
         }
     }
    
@@ -89,7 +119,6 @@ body {
             flex-direction: row;
             justify-content: space-between;
             align-items: baseline;
-            
         }
         
         &--title {
@@ -98,7 +127,7 @@ body {
             padding-bottom: 1rem;
             @include tablet {
                 display: none;
-                
+                width:25%;
             }
             
         }
@@ -119,9 +148,14 @@ body {
             width: 100%;
             font-size: 1.1rem;
             padding: 1rem 0;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-weight: 500;
             @include tablet {
                 width: 25%;
+            }
+            @include desktop {
+                width: 20%;
+
             }
         }
         
@@ -130,18 +164,19 @@ body {
         display: flex;
         flex-direction: column;
         @include desktop {
-            width: 90%;
+            width: 75%;
         }
     }
     &__topTitle {
         @extend .shows__card;
         display: none;
         @include tablet {
-            padding: 0;
-            margin-left: 1rem;
+            padding: 1rem;
             display: flex;
             flex-direction: row;
-            width: 70%;
+            justify-content: left;
+            align-items: center;
+            width: 100%;
             border: none;
         &--title {
             font-weight: 600;
