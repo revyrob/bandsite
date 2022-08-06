@@ -1,13 +1,65 @@
 /*
-*I need to add the other elements to the DOM
+*Add show after hero section
+*
 */
+function fillShowSection(info) {
+    const parentElement = document.querySelector("main");
+    const showsSection = document.createElement("section");
+    showsSection.classList.add("shows");
+    
+    //add shows header
+    const showsHeader = document.createElement("h2");
+    showsHeader.classList.add("shows__title");
+    showsHeader.innerText = "Shows";
+    
+    //add div wrapper
+    const showsWrapper = document.createElement("div");
+    showsWrapper.classList.add("shows__wrapper");
+    
+    //shows topTitle
+    const topTitleWrapper  = document.createElement("div");
+    topTitleWrapper.classList.add("shows__topTitle");
+    
+    // for loop for adding info for labels
+   function loopTitles(array){
+        let newHeader = ' ';
+        for(let i =0; i < array.length; i++) {
+            const topTitle  = document.createElement("div");
+            topTitle.classList.add("shows__topTitle--title"); 
+            topTitleWrapper.appendChild(topTitle);
+            
+            const topTitleHeader = document.createElement("h4");
+            topTitleHeader.innerText = array[i];
+            topTitle.appendChild(topTitleHeader);
+            
+            newHeader = topTitle;
+            
+        } return(newHeader);
+    } 
+    console.log(loopTitles(info));
+    // loopTitles(info);
+    parentElement.appendChild(showsSection);
+    showsSection.appendChild(showsHeader);
+    showsSection.appendChild(showsWrapper);
+    showsWrapper.appendChild(topTitleWrapper);
+    
+}
 
+/*
+*array for labels
+*/
+const tableLabels = ["DATE", "VENUE", "LOCATION", ""];
+/* 
+*Call the generateShows array with the array of objects showItems
+*/
+fillShowSection(tableLabels);
 
 /*
 * Adds a single item to the DOM
 * For each of the shows in the array
 * 
 */
+setTimeout(() => {
 function addShowToDocument(show) {
     const list = document.querySelector(".showsList");
     const card = document.createElement("div");
@@ -103,14 +155,17 @@ const showItems = [
     {date: "Wed Dec 15 2021", venue: "Press Club", location: "San Franciso, CA"},
 ];
 /*
-*array for labels
-*/
-const tableLabels = ["DATE", "VENUE", "LOCATION"];
 /* 
 *Call the generateShows array with the array of objects showItems
 */
-
 generateShows(showItems);
+
+}, "500")
+
+
+
+
+
 
 
 

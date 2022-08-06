@@ -33,8 +33,7 @@ body {
 // hero css
 .hero {
     @include hero;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/hero-shows.jpg);
-    flex-wrap: wrap;
+    background-image: linear-gradient(to bottom, rgb(50, 50, 50, 0.5), rgb(50, 50, 50, 0.5)), url(../assets/images/hero-shows.jpg);
     @include desktop {
         height: 90vh;
     }
@@ -89,6 +88,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 2.5rem 0;
+    
     @include tablet {
         margin: 1rem;
     }
@@ -112,15 +112,19 @@ body {
    
     &__card{
         padding: 1rem;
-        border-bottom: 1px solid $color-light;
-        
+        border-bottom: 1px solid $color-light-sec;
+        &:hover {
+            background-color: $color-accent-sec;
+        }
         @include tablet {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: baseline;
         }
-        
+        &--selected {
+            background-color: $color-light-sec;
+        }
         &--title {
             color: $color-light;
             font-size: 0.9rem;
@@ -128,8 +132,7 @@ body {
             @include tablet {
                 display: none;
                 width:25%;
-            }
-            
+            }          
         }
         &--info {
             font-weight: 600;
@@ -138,9 +141,7 @@ body {
             font-size: 1.1rem;
             @include tablet {
                 width: 25%;
-            }
-            
-            
+            }     
         }
         &--buy{
             background-color: $color-dark;
@@ -195,5 +196,6 @@ body {
 .footer {
     @include footer;  
 }
+
 
 

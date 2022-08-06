@@ -223,14 +223,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: left;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/hero-bio.jpg);
+  background-image: linear-gradient(to bottom, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
   background-position: center;
   background-size: cover;
-  min-height: 300px;
+  min-height: 400px;
   max-height: 1000px;
   height: 50vh;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/hero-shows.jpg);
-  flex-wrap: wrap;
+  background-image: linear-gradient(to bottom, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-shows.jpg);
 }
 @media (min-width: 768px) {
   .hero {
@@ -376,7 +375,10 @@ body {
 }
 .shows__card, .shows__topTitle {
   padding: 1rem;
-  border-bottom: 1px solid #AFAFAF;
+  border-bottom: 1px solid #E1E1E1;
+}
+.shows__card:hover, .shows__topTitle:hover {
+  background-color: #FAFAFA;
 }
 @media (min-width: 768px) {
   .shows__card, .shows__topTitle {
@@ -385,6 +387,9 @@ body {
     justify-content: space-between;
     align-items: baseline;
   }
+}
+.shows__card--selected {
+  background-color: #E1E1E1;
 }
 .shows__card--title {
   color: #AFAFAF;

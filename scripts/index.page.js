@@ -61,7 +61,7 @@ function addCommentToDocument(input) {
 /* 
 *Generate the comment list
 */
-function generateComments(list) {
+function displayComments(list) {
     const commentItem = commentEntries;
     commentItem.innerText = '';
     list.forEach(function(comment){
@@ -86,13 +86,14 @@ commentForm.addEventListener('submit', (event) => {
     commentItems.push({name: name, date: date, comment: comment});
     
     //generate comments down below
-    generateComments(commentItems);
+    displayComments(commentItems);
     //let a setTimeout run before clearing comments
-    setTimeout(() => {console.log('here is the pause');}, "1000")
     setTimeout(() => {clearComments();}, "1000")
 })
 
-
+//
+//add a click button to clear the comments
+//
 
 //the array for the dates, venues, and location
 const commentItems = [
@@ -101,4 +102,4 @@ const commentItems = [
     {name: "Miles Acosta", date: "12/20/2020", comment: "I can t stop listening. Every time I hear one of their songs the vocals it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can t get enough."},
 ];
 
-generateComments(commentItems);
+displayComments(commentItems);
