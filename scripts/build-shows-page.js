@@ -79,7 +79,7 @@ function addShowToDocument(show) {
     
     //add date from list
     const itemDate = document.createElement("div");
-    itemDate.classList.add("shows__card--info");
+    itemDate.classList.add("shows__card--info-dark");
     itemDate.innerText = show.date;
     
     //add VENUE title

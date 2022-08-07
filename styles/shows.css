@@ -424,14 +424,22 @@ body {
     width: 25%;
   }
 }
-.shows__card--info {
-  font-weight: 600;
+.shows__card--info, .shows__card--info-dark {
+  font-weight: 500;
   color: #323232;
   padding-bottom: 1.5rem;
   font-size: 1.1rem;
 }
 @media (min-width: 768px) {
-  .shows__card--info {
+  .shows__card--info, .shows__card--info-dark {
+    width: 25%;
+  }
+}
+.shows__card--info-dark {
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .shows__card--info-dark {
     width: 25%;
   }
 }

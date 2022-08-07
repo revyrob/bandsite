@@ -136,13 +136,20 @@ body {
             }          
         }
         &--info {
-            font-weight: 600;
+            font-weight: 500;
             color: $color-dark;
             padding-bottom: 1.5rem;
             font-size: 1.1rem;
             @include tablet {
                 width: 25%;
-            }     
+            }   
+        }
+        &--info-dark {
+            @extend .shows__card--info;
+            font-weight: 600;
+            @include tablet {
+                width: 25%;
+            }  
         }
         &--buy{
             @include buttons;
