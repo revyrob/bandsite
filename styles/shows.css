@@ -83,6 +83,15 @@ table {
 body {
   font-family: "AvenirNext LT Pro", sans-serif;
   font-weight: normal;
+  line-height: 1.125rem;
+  font-size: 0.8125;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
 }
 
 .navbar {
@@ -111,7 +120,7 @@ body {
   }
 }
 .navbar__logo {
-  height: 2rem;
+  height: 1.5rem;
   margin-bottom: 1rem;
 }
 .navbar__logo:hover {
@@ -164,16 +173,19 @@ body {
 .navbar__item-list {
   display: flex;
   justify-content: stretch;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 @media (min-width: 768px) {
   .navbar__item-list {
-    justify-content: left;
     margin-left: 5rem;
+    align-items: stretch;
+    justify-content: space-between;
+    max-width: 25%;
+    min-width: 15rem;
   }
 }
 .navbar__item {
-  color: #FFFFFF;
+  color: #E1E1E1;
   text-decoration: none;
   width: 50%;
   transition: 0.5s;
@@ -210,14 +222,6 @@ body {
     width: auto;
   }
 }
-@media (min-width: 768px) {
-  .navbar__item-list {
-    align-items: stretch;
-    justify-content: space-between;
-    max-width: 25%;
-    min-width: 15rem;
-  }
-}
 
 .hero {
   display: flex;
@@ -226,10 +230,12 @@ body {
   background-image: linear-gradient(to bottom, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
   background-position: center;
   background-size: cover;
-  min-height: 400px;
+  min-height: 270px;
   max-height: 1000px;
   height: 50vh;
   background-image: linear-gradient(to bottom, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-shows.jpg);
+  min-height: 300px;
+  max-height: 1000px;
 }
 @media (min-width: 768px) {
   .hero {
@@ -244,14 +250,16 @@ body {
 }
 .hero__title, .hero__subtitle {
   color: #FFFFFF;
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
   margin: 0rem 1rem;
 }
 @media (min-width: 768px) {
   .hero__title, .hero__subtitle {
-    font-size: 3.5rem;
+    font-size: 3.75rem;
     margin: 0rem 2rem;
+    line-height: 4.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -261,14 +269,22 @@ body {
     margin: 0 auto;
   }
 }
+@media (min-width: 768px) {
+  .hero {
+    min-height: 400px;
+    height: 40vh;
+  }
+}
 @media (min-width: 1280px) {
   .hero {
-    height: 90vh;
+    height: 80vh;
   }
 }
 @media (min-width: 768px) {
   .hero__title, .hero__subtitle {
     width: 70%;
+    font-weight: 600;
+    font-size: 3.25rem;
   }
 }
 .hero__container {
@@ -285,14 +301,15 @@ body {
   }
 }
 .hero__subtitle {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 @media (min-width: 768px) {
   .hero__subtitle {
-    margin-top: 2rem;
+    margin-top: 1.25rem;
     font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 3rem;
   }
 }
 .hero__wrapper {
@@ -306,15 +323,14 @@ body {
 }
 .hero__music {
   width: 90%;
+  height: 20%;
   margin-left: 1rem;
   margin-top: 1rem;
 }
 @media (min-width: 768px) {
   .hero__music {
     width: 50%;
-    margin-bottom: 2rem;
     margin-left: 2rem;
-    margin-top: 2rem;
   }
 }
 @media (min-width: 1280px) {
@@ -326,33 +342,32 @@ body {
 .shows {
   display: flex;
   flex-direction: column;
-  margin: 2.5rem 0;
 }
 @media (min-width: 768px) {
   .shows {
-    margin: 1rem;
+    margin: 0 2rem 2rem;
   }
 }
 @media (min-width: 1280px) {
   .shows {
-    flex-direction: row;
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
-    justify-content: space-between;
-    margin: 4rem auto;
+    flex-direction: row;
+    margin-top: 3rem;
   }
 }
 .shows__title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-left: 1rem;
-  padding-bottom: 1rem;
+  line-height: 1.375rem;
+  margin: 2rem 0 0 1rem;
 }
 @media (min-width: 768px) {
   .shows__title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     margin-left: 2rem;
+    line-height: 2.75rem;
   }
 }
 @media (min-width: 1280px) {
@@ -364,7 +379,7 @@ body {
 }
 @media (min-width: 768px) {
   .shows__title {
-    margin: 2rem 1rem;
+    margin: 2rem 0 0 1rem;
   }
 }
 @media (min-width: 1280px) {
@@ -392,9 +407,16 @@ body {
   background-color: #E1E1E1;
 }
 .shows__card--title {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: 600;
   color: #AFAFAF;
-  font-size: 0.9rem;
   padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .shows__card--title {
+    font-size: 0.875rem;
+  }
 }
 @media (min-width: 768px) {
   .shows__card--title {
@@ -414,13 +436,22 @@ body {
   }
 }
 .shows__card--buy {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 600;
   background-color: #323232;
   color: #FFFFFF;
   width: 100%;
-  font-size: 1.1rem;
   padding: 1rem 0;
   border-radius: 8px;
-  font-weight: 500;
+}
+.shows__card--buy:hover {
+  background-color: #000000;
+}
+@media (min-width: 768px) {
+  .shows__card--buy {
+    font-size: 1.25rem;
+  }
 }
 @media (min-width: 768px) {
   .shows__card--buy {
@@ -429,16 +460,23 @@ body {
 }
 @media (min-width: 1280px) {
   .shows__card--buy {
-    width: 20%;
+    width: 25%;
   }
 }
 .shows__wrapper {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 768px) {
+  .shows__wrapper {
+    margin: 0;
+    padding: 0;
+  }
+}
 @media (min-width: 1280px) {
   .shows__wrapper {
-    width: 75%;
+    width: 70%;
+    margin-left: auto;
   }
 }
 .shows__topTitle {
@@ -463,6 +501,15 @@ body {
 @media (min-width: 768px) and (min-width: 768px) {
   .shows__topTitle--title {
     width: 25%;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .showsList {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 
@@ -470,7 +517,6 @@ body {
   background-color: #323232;
   color: #FFFFFF;
   padding: 1.5rem;
-  line-height: 1.5rem;
   position: relative;
 }
 @media (min-width: 1280px) {
@@ -484,6 +530,7 @@ body {
 .footer__title {
   font-size: 1.5rem;
   font-weight: 600;
+  line-height: 1.5rem;
   padding: 1rem 0;
 }
 @media (min-width: 768px) {
@@ -584,11 +631,13 @@ body {
   }
 }
 .footer__copyright {
-  font-size: 0.8rem;
+  font-size: 0.79rem;
+  line-height: 1.125rem;
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   .footer__copyright {
     padding-top: 1.5rem;
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 }/*# sourceMappingURL=shows.css.map */

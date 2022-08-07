@@ -21,6 +21,13 @@
 @mixin body {
   font-family: $font-primary;
   font-weight: normal;
+  line-height: 1.125rem;
+  font-size: 0.8125;
+  font-weight: 400;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
 }
 
 @mixin navbar {
@@ -42,7 +49,7 @@
         }
     }
     &__logo {
-        height: 2rem;
+        height: 1.5rem;
         margin-bottom: 1rem;
         //hover affect of shaking logo when the user hovers over
         &:hover {
@@ -66,14 +73,17 @@
     &__item-list {
         display: flex;
         justify-content: stretch;
-        font-size: 1.25rem;
+        font-size: 1rem;
         @include tablet {
-            justify-content: left;
             margin-left: 5rem;
+            align-items: stretch;
+            justify-content: space-between;
+            max-width: 25%;
+            min-width: 15rem;
         }
     }
     &__item{
-        color: $color-accent;
+        color: $color-light-sec;
         text-decoration: none;
         width: 50%;
         transition: 0.5s;
@@ -82,6 +92,7 @@
             text-shadow: 1px 1px $color-accent;
             font-weight: 800;
         }
+        
     } 
     &__active {
         border-bottom: 4px solid $color-accent;
@@ -108,7 +119,7 @@
     url(../assets/images/hero-bio.jpg);
     background-position: center;
     background-size:cover;
-    min-height: 400px;
+    min-height: 270px;
     max-height: 1000px;
     height: 50vh;
     @include tablet {
@@ -121,12 +132,15 @@
     }
     &__title {
         color: $color-accent;
-        font-size: 2rem;
-        font-weight: 600;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 2rem;
         margin: 0rem 1rem;
         @include tablet {
-            font-size: 3.5rem;
+            font-size: 3.75rem;
             margin: 0rem 2rem;
+            line-height: 4.25rem;
+
 
         }
         @include desktop {
@@ -138,21 +152,32 @@
 @mixin section__title {
         font-size: 1.5rem;
         font-weight: 600;
-        margin-left: 1rem;
+        line-height: 1.375rem;       ;
         @include tablet {
-            font-size: 2.5rem;
+            font-size: 2.25rem;
             margin-left: 2rem;
+            line-height: 2.75rem;
         }
         @include desktop {
             @include wrapper ($desktop-width);
         }
 }
 
+@mixin section__subheader {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+    @include tablet {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}
+
 @mixin footer {
     background-color: $color-dark;
     color: $color-accent;
     padding: 1.5rem;
-    line-height: 1.5rem;
+    
     position: relative;
     &__wrapper {
         @include desktop {
@@ -163,6 +188,7 @@
     &__title {
         font-size: 1.5rem;
         font-weight: 600;
+        line-height: 1.5rem;
         padding: 1rem 0;
         @include tablet {
             margin-right: 2rem;
@@ -254,10 +280,33 @@
     }
 
 &__copyright {
-    font-size: 0.8rem;
+    font-size: 0.79rem;
+    line-height: 1.125rem;
+    font-weight: 400;
     @include tablet {
         padding-top: 1.5rem;
-        font-size: 1rem;
+        font-size: 0.875rem;
     }
 }
+}
+
+@mixin lables{
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    @include tablet{
+        font-size: 0.875rem;
+    }
+}
+
+@mixin buttons {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 600; 
+    &:hover {
+        background-color: $color-dark-sec;
+    }
+    @include tablet{
+        font-size: 1.25rem;
+    }
 }

@@ -83,6 +83,15 @@ table {
 body {
   font-family: "AvenirNext LT Pro", sans-serif;
   font-weight: normal;
+  line-height: 1.125rem;
+  font-size: 0.8125;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
 }
 
 .navbar {
@@ -111,7 +120,7 @@ body {
   }
 }
 .navbar__logo {
-  height: 2rem;
+  height: 1.5rem;
   margin-bottom: 1rem;
 }
 .navbar__logo:hover {
@@ -164,16 +173,19 @@ body {
 .navbar__item-list {
   display: flex;
   justify-content: stretch;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 @media (min-width: 768px) {
   .navbar__item-list {
-    justify-content: left;
     margin-left: 5rem;
+    align-items: stretch;
+    justify-content: space-between;
+    max-width: 25%;
+    min-width: 15rem;
   }
 }
 .navbar__item {
-  color: #FFFFFF;
+  color: #E1E1E1;
   text-decoration: none;
   width: 50%;
   transition: 0.5s;
@@ -205,10 +217,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: left;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/hero-bio.jpg);
+  background-image: linear-gradient(to bottom, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
   background-position: center;
   background-size: cover;
-  min-height: 300px;
+  min-height: 270px;
   max-height: 1000px;
   height: 50vh;
 }
@@ -225,14 +237,16 @@ body {
 }
 .hero__title {
   color: #FFFFFF;
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
   margin: 0rem 1rem;
 }
 @media (min-width: 768px) {
   .hero__title {
-    font-size: 3.5rem;
+    font-size: 3.75rem;
     margin: 0rem 2rem;
+    line-height: 4.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -253,17 +267,24 @@ body {
     margin: 0;
   }
 }
+@media (min-width: 1280px) {
+  .about {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
 .about__title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-left: 1rem;
-  padding: 1.5rem 0 1rem;
-  margin: 0;
+  line-height: 1.375rem;
+  margin: 2rem 0 1rem;
 }
 @media (min-width: 768px) {
   .about__title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     margin-left: 2rem;
+    line-height: 2.75rem;
   }
 }
 @media (min-width: 1280px) {
@@ -283,6 +304,8 @@ body {
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 }
 @media (min-width: 1280px) {
@@ -305,14 +328,10 @@ body {
     width: 75vw;
   }
 }
-@media (min-width: 1280px) {
-  .about__img {
-    max-width: 1100px;
-    width: 100%;
-    margin: 0 auto;
-  }
-}
 .about__quote {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
@@ -320,10 +339,20 @@ body {
 @media (min-width: 768px) {
   .about__quote {
     font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 .about__quote--author {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
   margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .about__quote--author {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 @media (min-width: 768px) {
   .about__quote--author {
@@ -341,19 +370,20 @@ body {
     padding: 1rem 0 0 0;
   }
 }
-@media (min-width: 1280px) {
-  .about__container, .comment__user-input {
-    margin: 0;
-  }
-}
 .about__container--quote {
-  font-size: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  line-height: 2rem;
-  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .about__container--quote {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 @media (min-width: 768px) {
   .about__container--quote {
@@ -386,8 +416,15 @@ body {
   }
 }
 .about__subtitle {
-  font-size: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
   font-weight: 600;
+}
+@media (min-width: 768px) {
+  .about__subtitle {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 @media (min-width: 768px) {
   .about__subtitle {
@@ -416,7 +453,7 @@ body {
 .photo-gallery {
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 @media (min-width: 768px) {
   .photo-gallery {
@@ -434,12 +471,14 @@ body {
 .photo-gallery__title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-left: 1rem;
+  line-height: 1.375rem;
+  margin: 1.5rem 0 0 1rem;
 }
 @media (min-width: 768px) {
   .photo-gallery__title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     margin-left: 2rem;
+    line-height: 2.75rem;
   }
 }
 @media (min-width: 1280px) {
@@ -501,13 +540,14 @@ body {
 .comment__title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-left: 1rem;
+  line-height: 1.375rem;
   margin: 0;
 }
 @media (min-width: 768px) {
   .comment__title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     margin-left: 2rem;
+    line-height: 2.75rem;
   }
 }
 @media (min-width: 1280px) {
@@ -522,11 +562,17 @@ body {
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid #E1E1E1;
-  padding-top: 1rem;
+  padding: 1rem;
 }
 @media (min-width: 768px) {
   .comment__wrapper {
     margin: 0 5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comment__wrapper {
+    width: 50%;
+    margin: auto;
   }
 }
 .comment__previous {
@@ -558,6 +604,9 @@ body {
   }
 }
 .comment__user-input--submit {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 600;
   background-color: #323232;
   color: #FFFFFF;
   width: 100%;
@@ -565,10 +614,17 @@ body {
   margin: 1rem 0;
   border-radius: 5px;
 }
+.comment__user-input--submit:hover {
+  background-color: #000000;
+}
+@media (min-width: 768px) {
+  .comment__user-input--submit {
+    font-size: 1.25rem;
+  }
+}
 @media (min-width: 768px) {
   .comment__user-input--submit {
     max-width: 15rem;
-    font-size: 1rem;
     align-items: flex-end;
   }
 }
@@ -590,16 +646,46 @@ body {
   padding-bottom: 0.5rem;
 }
 .comment__name {
-  font-size: 1rem;
+  font-family: "AvenirNext LT Pro", sans-serif;
+  font-weight: normal;
+  line-height: 1.125rem;
+  font-size: 0.8125;
+  font-weight: 400;
   font-weight: 600;
 }
+@media (min-width: 768px) {
+  .comment__name {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
 .comment__comment {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  font-family: "AvenirNext LT Pro", sans-serif;
+  font-weight: normal;
+  line-height: 1.125rem;
+  font-size: 0.8125;
+  font-weight: 400;
   border-radius: 5px;
 }
+@media (min-width: 768px) {
+  .comment__comment {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
 .comment__timeStamp {
+  font-family: "AvenirNext LT Pro", sans-serif;
+  font-weight: normal;
+  line-height: 1.125rem;
+  font-size: 0.8125;
+  font-weight: 400;
   color: #AFAFAF;
+}
+@media (min-width: 768px) {
+  .comment__timeStamp {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
 }
 
 .form {
@@ -609,6 +695,10 @@ body {
 @media (min-width: 1280px) {
   .form {
     padding: 1.5rem 0;
+    max-width: 1280px;
+    width: 95%;
+    margin: 0 auto;
+    margin-left: 1rem;
   }
 }
 .form__div {
@@ -625,8 +715,14 @@ body {
 }
 .form__headings {
   color: #AFAFAF;
-  font-size: 0.8rem;
-  padding-bottom: 0.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .form__headings {
+    font-size: 0.875rem;
+  }
 }
 .form__input, .form__input--comment {
   font-family: "AvenirNext LT Pro", sans-serif;
@@ -645,7 +741,6 @@ body {
   background-color: #323232;
   color: #FFFFFF;
   padding: 1.5rem;
-  line-height: 1.5rem;
   position: relative;
 }
 @media (min-width: 1280px) {
@@ -659,6 +754,7 @@ body {
 .footer__title {
   font-size: 1.5rem;
   font-weight: 600;
+  line-height: 1.5rem;
   padding: 1rem 0;
 }
 @media (min-width: 768px) {
@@ -759,11 +855,13 @@ body {
   }
 }
 .footer__copyright {
-  font-size: 0.8rem;
+  font-size: 0.79rem;
+  line-height: 1.125rem;
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   .footer__copyright {
     padding-top: 1.5rem;
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 }/*# sourceMappingURL=bio.css.map */

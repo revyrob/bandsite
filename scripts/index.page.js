@@ -1,16 +1,15 @@
 /*
 * Comment form
 */
-//Need this for Event Listener
-const commentForm = document.querySelector('.form');
-//create a const for the journal entries to be added
-const commentEntries = document.querySelector('.comment__added');
 /*
 * Journal Form Submit Event and Handler
 *
 ******Use as outline for creating form data*******
 */
-
+//Need this for Event Listener
+const commentForm = document.querySelector('.form');
+//create a const for the journal entries to be added
+const commentEntries = document.querySelector('.comment__added');
 
 //add previous comments to div
 function addCommentToDocument(input) {
@@ -68,7 +67,9 @@ function displayComments(list) {
         addCommentToDocument(comment);
     });
 }
-
+/* 
+*clear comments after the user has submitted a comment
+*/
 function clearComments() {
     //target the name and comment box to clear
     const clear = document.querySelector('.form__input');
@@ -77,7 +78,10 @@ function clearComments() {
     clear.value = ' ';
     clear2.value= ' ';
 }
-
+/* 
+*event listener for when comment is submitted and there is a setTimeout 
+*before the clearComments function is passed
+*/
 commentForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -90,16 +94,13 @@ commentForm.addEventListener('submit', (event) => {
     //let a setTimeout run before clearing comments
     setTimeout(() => {clearComments();}, "1000")
 })
-
-//
-//add a click button to clear the comments
-//
-
 //the array for the dates, venues, and location
 const commentItems = [
     {name: "Connor Walton", date: "02/17/2021", comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."},
     {name: "Emilie Beach", date: "01/09/2021", comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
     {name: "Miles Acosta", date: "12/20/2020", comment: "I can t stop listening. Every time I hear one of their songs the vocals it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can t get enough."},
 ];
-
+/* 
+*Run the displayComments function with the list of commentItems
+*/
 displayComments(commentItems);

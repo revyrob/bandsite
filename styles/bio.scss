@@ -25,25 +25,24 @@ body {
     @include tablet {
         margin: 0;
     }
+    @include desktop {
+        @include wrapper($desktop-width);
+    }
     &__title {
         @include section__title;
-        padding: 1.5rem 0 1rem;
-        margin: 0;
+        margin: 2rem 0 1rem;
         @include tablet {
             padding-bottom: 1rem;
         }
         @include desktop {
-            //fix this to use the mixin
-            max-width: 1280px;
-            width: 100%;
-            margin: 0 auto;
+            @include wrapper($desktop-width);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
         }
     }
     &__wrapper {
         @include desktop {
-            max-width: 1100px;
-            width: 100%;
-            margin: 0 auto;
+            @include wrapper(1100px);
         }
     }
     &__img--container {
@@ -58,20 +57,16 @@ body {
             width: 75vw;
         }
         @include desktop {
-            max-width: 1100px;
-            width: 100%;
-            margin: 0 auto;
+            
         }
     }
     &__quote {
+        @include section__subheader;
         margin-top: 1rem;
         display: flex;
         flex-direction: column;
-        // align-items: flex-start;
-        @include tablet {
-            font-size: 1.5rem;
-        }
         &--author {
+            @include section__subheader;
             margin-top: 1rem;
             @include tablet {
                 font-size: 1rem;
@@ -89,13 +84,12 @@ body {
         }
         
         &--quote {
-            font-size: 1rem;
+            @include section__subheader;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
-            line-height: 2rem;
-            font-weight: 600;
+
             @include tablet {
                 width: 75vw;
                 margin: auto;
@@ -121,8 +115,7 @@ body {
         }
     }
     &__subtitle {
-        font-size: 1rem;
-        font-weight: 600;
+        @include section__subheader;
         @include tablet {
             font-size: 1.5rem;
         }
@@ -148,7 +141,7 @@ body {
 .photo-gallery {
     display: flex;
     flex-direction: column;
-    margin-top: 3rem;
+    margin-top: 1rem;
     @include tablet {
         margin: 1.5rem 2rem;
     }
@@ -158,6 +151,7 @@ body {
     }
     &__title {
         @include section__title;
+        margin: 1.5rem 0 0 1rem;
         @include tablet {
             margin-left: 0;
         }
@@ -213,6 +207,10 @@ body {
         @include tablet {
             margin: 0 5rem;
         }
+        @include desktop {
+            width:50%;
+            margin: auto;
+        }
         
     }
     &__previous{
@@ -242,6 +240,7 @@ body {
                 }
     }
     &__user-input--submit{
+        @include buttons;
         background-color: $color-dark;
         color: $color-accent;
         width: 100%;
@@ -250,7 +249,6 @@ body {
         border-radius: 5px;
         @include tablet{
             max-width: 15rem;
-            font-size: 1rem;
             align-items:flex-end ;
         }
     }
@@ -273,15 +271,16 @@ body {
         
     }
     &__name {
-        font-size: 1rem;
+        @include body;
         font-weight: 600;
     }
     &__comment {
-        font-size: 0.9rem;
+        @include body;
         border-radius: 5px;
         
     }
     &__timeStamp {
+        @include body;
         color: $color-light;
     }
 }
@@ -290,7 +289,7 @@ body {
     margin-left: 1rem;
     @include desktop {
         padding: 1.5rem 0;
-        max-width: $max-width;
+        max-width: $desktop-width;
         width: 95%;
         margin: 0 auto;
         margin-left: 1rem;
@@ -309,8 +308,7 @@ body {
     }
     &__headings {
         color: $color-light;
-        font-size: 0.8rem;
-        padding-bottom: .5rem;
+        @include lables;
         
     }
     &__input {
