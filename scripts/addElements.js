@@ -20,6 +20,10 @@ function fillShowSection(info) {
     const topTitleWrapper  = document.createElement("div");
     topTitleWrapper.classList.add("shows__topTitle");
     
+    //shows showsList
+    const showListDiv  = document.createElement("div");
+    showListDiv.classList.add("showsList");
+
     // for loop for adding info for labels
    function loopTitles(array){
         let newHeader = ' ';
@@ -36,12 +40,13 @@ function fillShowSection(info) {
             
         } return(newHeader);
     } 
-    console.log(loopTitles(info));
+    // console.log(loopTitles(info));
     // loopTitles(info);
     parentElement.appendChild(showsSection);
     showsSection.appendChild(showsHeader);
     showsSection.appendChild(showsWrapper);
     showsWrapper.appendChild(topTitleWrapper);
+    parentElement.appendChild(showListDiv);
     
 }
 
@@ -59,7 +64,7 @@ fillShowSection(tableLabels);
 * For each of the shows in the array
 * 
 */
-setTimeout(() => {
+
 function addShowToDocument(show) {
     const list = document.querySelector(".showsList");
     const card = document.createElement("div");
@@ -121,7 +126,7 @@ function addShowToDocument(show) {
         //if child element is selected add styling
         //if another card is selected change styling
         const selectedElement = document.querySelector('.shows__card--selected');
-        console.log(event.currentTarget);
+        // console.log(event.currentTarget);
         if (selectedElement !== null) {
             selectedElement.classList.remove('shows__card--selected');
         }
@@ -160,7 +165,7 @@ const showItems = [
 */
 generateShows(showItems);
 
-}, "500")
+
 
 
 
