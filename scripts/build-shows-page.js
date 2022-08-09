@@ -10,12 +10,12 @@ function fillShowSection(info) {
     const parentElement = document.querySelector("main");
     const showsSection = document.createElement("section");
     showsSection.classList.add("shows");
-
+    
     //add shows header
     const showsHeader = document.createElement("h2");
     showsHeader.classList.add("shows__title");
     showsHeader.innerText = "Shows";
-
+    
     //shows showsList
     const showListDiv  = document.createElement("div");
     showListDiv.classList.add("showsList");
@@ -29,7 +29,7 @@ function fillShowSection(info) {
     topTitleWrapper.classList.add("shows__topTitle");
     
     // for loop for adding info for labels
-   function loopTitles(array){
+    function loopTitles(array){
         let newHeader = ' ';
         for(let i =0; i < array.length; i++) {
             const topTitle  = document.createElement("div");
@@ -66,55 +66,72 @@ fillShowSection(tableLabels);
 /*
 * Adds a single item to the DOM
 * For each of the shows in the array
+* Add the API to hear since the information will be going in here
 */
-function addShowToDocument(show) {
-    const list = document.querySelector(".showsList");
-    const card = document.createElement("div");
-    card.classList.add("shows__card");
+const showsURL = "https://project-1-api.herokuapp.com/showdates?api_key=e0eea5f0-0f8c-4b54-9fc4-ff50843766d4";
+
+
+axios.get(showsURL).then(response => {
     
-    //add DATE title
-    const itemTitleDate = document.createElement("h4");
-    itemTitleDate.classList.add("shows__card--title");
-    itemTitleDate.innerText = "DATE";
     
-    //add date from list
-    const itemDate = document.createElement("div");
-    itemDate.classList.add("shows__card--info-dark");
-    itemDate.innerText = show.date;
+    //call an array of the data
+    const myShowsArray = response.data;
+    // console.log(myShowsArray);
     
-    //add VENUE title
-    const itemTitleVenue = document.createElement("h4");
-    itemTitleVenue.classList.add("shows__card--title");
-    itemTitleVenue.innerText = "VENUE";
-    
-    //add venue from list
-    const itemVenue = document.createElement("div");
-    itemVenue.classList.add("shows__card--info");
-    itemVenue.innerText = show.venue;
-    
-    //add LOCATION title
-    const itemTitleLocation = document.createElement("h4");
-    itemTitleLocation.classList.add("shows__card--title");
-    itemTitleLocation.innerText = "LOCATION";
-    
-    //add location from list
-    const itemLocation = document.createElement("div");
-    itemLocation.classList.add("shows__card--info");
-    itemLocation.innerText = show.location;
-    
-    //add button
-    const itemButton = document.createElement("button");
-    itemButton.classList.add("shows__card--buy");
-    itemButton.innerText = "BUY TICKETS";
-    
-    list.appendChild(card);
-    card.appendChild(itemTitleDate);
-    card.appendChild(itemDate);
-    card.appendChild(itemTitleVenue);
-    card.appendChild(itemVenue);
-    card.appendChild(itemTitleLocation);
-    card.appendChild(itemLocation);
-    card.appendChild(itemButton);
+    //go through a forEach to put the data where it belongs
+    myShowsArray.forEach(myArray => {
+        //get all the divs and titles to start
+        //make each card
+        const list = document.querySelector(".showsList");
+        const card = document.createElement("div");
+        card.classList.add("shows__card");
+        list.appendChild(card);
+        
+        //add DATE title
+        const itemTitleDate = document.createElement("h4");
+        itemTitleDate.classList.add("shows__card--title");
+        itemTitleDate.innerText = "DATE";
+        card.appendChild(itemTitleDate);
+        
+        //add date from list
+        const itemDate = document.createElement("div");
+        itemDate.classList.add("shows__card--info-dark");
+        itemDate.innerText = new Date(myArray.date).toDateString();
+        card.appendChild(itemDate);
+        
+        //add VENUE title
+        const itemTitleVenue = document.createElement("h4");
+        itemTitleVenue.classList.add("shows__card--title");
+        itemTitleVenue.innerText = "VENUE";
+        card.appendChild(itemTitleVenue);
+        
+        //add venue from list
+        const itemVenue = document.createElement("div");
+        itemVenue.classList.add("shows__card--info");
+        itemVenue.innerText = myArray.place;
+        card.appendChild(itemVenue);
+        
+        //add LOCATION title
+        const itemTitleLocation = document.createElement("h4");
+        itemTitleLocation.classList.add("shows__card--title");
+        itemTitleLocation.innerText = "LOCATION";
+        card.appendChild(itemTitleLocation);
+        
+        //add location from list
+        const itemLocation = document.createElement("div");
+        itemLocation.classList.add("shows__card--info");
+        itemLocation.innerText = myArray.location;
+        card.appendChild(itemLocation);
+        
+        //add button
+        const itemButton = document.createElement("button");
+        itemButton.classList.add("shows__card--buy");
+        itemButton.innerText = "BUY TICKETS";
+        card.appendChild(itemButton);
+        
+        console.log(list.appendChild(card));
+        
+    })
     
     /* 
     *event listener for clicking on a show div
@@ -129,40 +146,14 @@ function addShowToDocument(show) {
         if (selectedElement !== null) {
             selectedElement.classList.remove('shows__card--selected');
         }
-        event.target.classList.add('shows__card--selected')
+        //just the card can be selected
+        card.classList.add('shows__card--selected')
     });
     list.appendChild(card);
     
-}
-/* 
-*Generate the show list
-Calls the addShowToDocument to loop throug the array
-*/
-function generateShows(showList) {
-    const showItem = document.querySelector(".showsList");
-    showItem.innerText = '';
-    showList.forEach(function(show){
-        addShowToDocument(show);
-    });
-}
-
-/* 
-*
-the array for the dates, venues, and location
-*/
-const showItems = [
-    {date: "Mon Sept 06 2021", venue: "Ronald Lane", location: "San Franciso, CA"},
-    {date: "Tues Sept 21 2021", venue: "Pier 3 East", location: "San Franciso, CA"},
-    {date: "Fri Oct 15 2021", venue: "View Lounge", location: "San Franciso, CA"},
-    {date: "Sat Nov 06 2021", venue: "Hyatt Agency", location: "San Franciso, CA"},
-    {date: "Fri Nov 26 2021", venue: "Moscow Center", location: "San Franciso, CA"},
-    {date: "Wed Dec 15 2021", venue: "Press Club", location: "San Franciso, CA"},
-];
-/*
-/* 
-*Call the generateShows array with the array of objects showItems
-*/
-generateShows(showItems);
+}).catch((err) => {
+    console.error(err);
+});
 
 
 

@@ -124,12 +124,14 @@ body {
         }
         &--selected {
             background-color: $color-light-sec;
+            
         }
         &--title {
             @include lables;
             color: $color-light;
             // font-size: 0.9rem;
             padding-bottom: 1rem;
+            
             @include tablet {
                 display: none;
                 width:25%;
@@ -140,6 +142,7 @@ body {
             color: $color-dark;
             padding-bottom: 1.5rem;
             font-size: 1.1rem;
+            
             @include tablet {
                 width: 25%;
             }   
@@ -147,6 +150,7 @@ body {
         &--info-dark {
             @extend .shows__card--info;
             font-weight: 600;
+            
             @include tablet {
                 width: 25%;
             }  
@@ -156,10 +160,9 @@ body {
             background-color: $color-dark;
             color: $color-accent;
             width: 100%;
-            // font-size: 1.1rem;
             padding: 1rem 0;
             border-radius: 8px;
-            // font-weight: 500;
+            
             @include tablet {
                 width: 25%;
             }
