@@ -129,7 +129,8 @@ function addShowToDocument(show) {
         if (selectedElement !== null) {
             selectedElement.classList.remove('shows__card--selected');
         }
-        event.target.classList.add('shows__card--selected')
+        //just the card can be selected
+        card.classList.add('shows__card--selected')
     });
     list.appendChild(card);
     
