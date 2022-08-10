@@ -77,31 +77,28 @@ function clearComments() {
     clear.value = ' ';
     clear2.value= ' ';
 }
+
 /* 
 *event listener which pushes to the online API
 */
-
-
 commentForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    axios.get(commentsURL).then(response => {  
-        //create const for response
-        const newPost = response.data;
-        // console.log(newPost);
-        const newComment = {name: event.target.name.value, comment: event.target.comment.value};
-        console.log(newComment);
-        
-        newPost.push(newComment);
-        console.log(newPost);
-        
-        //generate comments down below
-        //let a setTimeout run before clearing comments
-        setTimeout(() => {clearComments();}, "1000")
-        
+    axios({
+        method:'post',
+        url: commentsURL,
+        data : {
+            name: event.target.name.value,
+            comment: event.target.comment.value
+        }  
     }).catch((err) => {
         console.error(err);
     });
+    clearComments();
+   
+    //generate comments down below
+    //let a setTimeout run before clearing comments
+    setTimeout(() => { displayComments();}, "500")
 })
-
+        
 //call function
 displayComments();
