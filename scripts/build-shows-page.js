@@ -45,7 +45,7 @@ function fillShowSection(info) {
             
         } return(newHeader);
     } 
-    // console.log(loopTitles(info));
+   
     loopTitles(info);
     
     parentElement.appendChild(showsSection);
@@ -69,87 +69,93 @@ fillShowSection(tableLabels);
 * Add the API to hear since the information will be going in here
 */
 const showsURL = "https://project-1-api.herokuapp.com/showdates?api_key=e0eea5f0-0f8c-4b54-9fc4-ff50843766d4";
-
+const list = document.querySelector(".showsList");
 
 axios.get(showsURL).then(response => {
     
-    
     //call an array of the data
     const myShowsArray = response.data;
-    // console.log(myShowsArray);
     
     //go through a forEach to put the data where it belongs
     myShowsArray.forEach(myArray => {
         //get all the divs and titles to start
         //make each card
-        const list = document.querySelector(".showsList");
+        
         const card = document.createElement("div");
         card.classList.add("shows__card");
-        list.appendChild(card);
         
         //add DATE title
         const itemTitleDate = document.createElement("h4");
         itemTitleDate.classList.add("shows__card--title");
         itemTitleDate.innerText = "DATE";
-        card.appendChild(itemTitleDate);
         
         //add date from list
         const itemDate = document.createElement("div");
         itemDate.classList.add("shows__card--info-dark");
         itemDate.innerText = new Date(myArray.date).toDateString();
-        card.appendChild(itemDate);
         
         //add VENUE title
         const itemTitleVenue = document.createElement("h4");
         itemTitleVenue.classList.add("shows__card--title");
         itemTitleVenue.innerText = "VENUE";
-        card.appendChild(itemTitleVenue);
         
         //add venue from list
         const itemVenue = document.createElement("div");
         itemVenue.classList.add("shows__card--info");
         itemVenue.innerText = myArray.place;
-        card.appendChild(itemVenue);
         
         //add LOCATION title
         const itemTitleLocation = document.createElement("h4");
         itemTitleLocation.classList.add("shows__card--title");
         itemTitleLocation.innerText = "LOCATION";
-        card.appendChild(itemTitleLocation);
         
         //add location from list
         const itemLocation = document.createElement("div");
         itemLocation.classList.add("shows__card--info");
         itemLocation.innerText = myArray.location;
-        card.appendChild(itemLocation);
         
         //add button
         const itemButton = document.createElement("button");
         itemButton.classList.add("shows__card--buy");
         itemButton.innerText = "BUY TICKETS";
+        
+        //list of appended items
+        //this needs to be at the bottom, it will not work properly
+        //with the event listener if they are added under each section
+        //which they apply
+        list.appendChild(card);
+        card.appendChild(itemTitleDate);
+        card.appendChild(itemDate);
+        card.appendChild(itemTitleVenue);
+        card.appendChild(itemVenue);
+        card.appendChild(itemTitleLocation);
+        card.appendChild(itemLocation);
         card.appendChild(itemButton);
         
-        console.log(list.appendChild(card));
+        /* 
+        *event listener for clicking on a show div
+        *issue with the event listener was solved by changing where the add shows__card--selected
+        *was targetted.  before it was targetted to event.target but if it targets 'card' 
+        *it works
+        */
         
+        card.addEventListener('click', () => {
+            //if an element has a .style-selected class, remove it
+            //if child element is selected add styling
+            //if another card is selected change styling
+            const selectedElement = document.querySelector('.shows__card--selected');
+            
+            if (selectedElement !== null) {
+                selectedElement.classList.remove('shows__card--selected');
+            }
+            //just the card can be selected
+            card.classList.add('shows__card--selected');
+
+        });
+        list.appendChild(card);
     })
     
-    /* 
-    *event listener for clicking on a show div
-    * there is still an issue with selected will select either the entire card or the titles??
-    */
-    card.addEventListener('click', (event) => {
-        //if an element has a .style-selected class, remove it
-        //if child element is selected add styling
-        //if another card is selected change styling
-        const selectedElement = document.querySelector('.shows__card--selected');
-        // console.log(event.currentTarget);
-        if (selectedElement !== null) {
-            selectedElement.classList.remove('shows__card--selected');
-        }
-        //just the card can be selected
-        card.classList.add('shows__card--selected')
-    });
-    list.appendChild(card);
+    
     
 }).catch((err) => {
     console.error(err);

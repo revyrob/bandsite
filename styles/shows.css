@@ -112,9 +112,9 @@ body {
     padding-bottom: 0;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .navbar__wrapper {
-    max-width: 1280px;
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
   }
@@ -170,13 +170,13 @@ body {
   text-align: center;
   width: 100%;
 }
-.navbar__item-list {
+.navbar__itemList {
   display: flex;
   justify-content: stretch;
   font-size: 1rem;
 }
 @media (min-width: 768px) {
-  .navbar__item-list {
+  .navbar__itemList {
     margin-left: 5rem;
     align-items: stretch;
     justify-content: space-between;
@@ -230,9 +230,9 @@ body {
   background-image: linear-gradient(to bottom, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
   background-position: center;
   background-size: cover;
-  min-height: 270px;
+  min-height: 200px;
   max-height: 1000px;
-  height: 50vh;
+  height: 35vh;
   background-image: linear-gradient(to bottom, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-shows.jpg);
   min-height: 300px;
   max-height: 1000px;
@@ -242,7 +242,7 @@ body {
     height: 70vh;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .hero {
     align-items: center;
     justify-content: baseline;
@@ -262,9 +262,9 @@ body {
     line-height: 4.25rem;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .hero__title, .hero__subtitle {
-    max-width: 1280px;
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
   }
@@ -275,7 +275,7 @@ body {
     height: 40vh;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .hero {
     height: 80vh;
   }
@@ -291,11 +291,11 @@ body {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .hero__container {
     display: flex;
     flex-direction: row;
-    max-width: 1280px;
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
   }
@@ -316,7 +316,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .hero__wrapper {
     width: 50%;
   }
@@ -333,7 +333,7 @@ body {
     margin-left: 2rem;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .hero__music {
     width: 50%;
   }
@@ -348,9 +348,9 @@ body {
     margin: 0 2rem 2rem;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .shows {
-    max-width: 1280px;
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
     flex-direction: row;
@@ -370,9 +370,9 @@ body {
     line-height: 2.75rem;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .shows__title {
-    max-width: 1280px;
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
   }
@@ -382,7 +382,7 @@ body {
     margin: 2rem 0 0 1rem;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .shows__title {
     margin: 0;
     width: auto;
@@ -447,6 +447,7 @@ body {
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: 600;
+  border: none;
   background-color: #323232;
   color: #FFFFFF;
   width: 100%;
@@ -466,7 +467,7 @@ body {
     width: 25%;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .shows__card--buy {
     width: 25%;
   }
@@ -481,7 +482,7 @@ body {
     padding: 0;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .shows__wrapper {
     width: 70%;
     margin-left: auto;
@@ -513,9 +514,9 @@ body {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .showsList {
-    max-width: 1280px;
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
   }
@@ -527,10 +528,10 @@ body {
   padding: 1.5rem;
   position: relative;
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .footer__wrapper {
     padding: 0;
-    max-width: 1280px;
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
   }
@@ -579,7 +580,7 @@ body {
     justify-content: space-between;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .footer__container {
     width: 75%;
   }
@@ -633,7 +634,7 @@ body {
     margin-right: 1rem;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .footer__logo-img--tablet {
     margin-right: 0;
   }

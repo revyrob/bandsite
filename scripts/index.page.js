@@ -20,7 +20,6 @@ function displayComments() {
     axios.get(commentsURL).then(response => {  
         //call an array of the data
         const myCommentArray = response.data;
-        // console.log(myCommentArray);
         
         //go through a forEach to put the data where it belongs
         myCommentArray.forEach(myArray => {
@@ -73,7 +72,6 @@ function clearComments() {
     //target the name and comment box to clear
     const clear = document.querySelector('.form__input');
     const clear2 = document.querySelector('.form__input--comment');
-    // console.log(clear.value);
     clear.value = ' ';
     clear2.value= ' ';
 }

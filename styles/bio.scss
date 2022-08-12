@@ -57,7 +57,6 @@ body {
             width: 75vw;
         }
         @include desktop {
-            
         }
     }
     &__quote {
@@ -76,13 +75,12 @@ body {
     }
     
     &__container {
-        margin: 2rem 0 1rem 0;
+        margin: 2rem 0 1rem;
         @include tablet {
             width: 75vw;
             margin: auto;
-            padding: 1rem 0 0 0;
+            padding: 1rem 0 0;
         }
-        
         &--quote {
             @include section__subheader;
             display: flex;
@@ -309,7 +307,6 @@ body {
     &__headings {
         color: $color-light;
         @include lables;
-        
     }
     &__input {
         font-family: $font-primary;
@@ -322,6 +319,7 @@ body {
         &--comment {
             @extend .form__input;
             height: 7rem;
+            resize: none;
         }
     }
 }

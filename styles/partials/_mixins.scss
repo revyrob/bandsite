@@ -18,6 +18,7 @@
   margin: 0 auto;
 }
 
+//there is a comment about doing this in the reset??
 @mixin body {
   font-family: $font-primary;
   font-weight: normal;
@@ -70,7 +71,7 @@
         text-align: center;
         width: 100%;
     }
-    &__item-list {
+    &__itemList {
         display: flex;
         justify-content: stretch;
         font-size: 1rem;
@@ -115,13 +116,13 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    background-image: linear-gradient(to bottom, rgb(50, 50, 50, 0.5), rgb(50, 50, 50, 0.5)), 
+    background-image: linear-gradient(to bottom,$color-dark-opacity, $color-dark-opacity), 
     url(../assets/images/hero-bio.jpg);
     background-position: center;
     background-size:cover;
-    min-height: 270px;
+    min-height: 200px;
     max-height: 1000px;
-    height: 50vh;
+    height: 35vh;
     @include tablet {
         height: 70vh;
     }
@@ -303,6 +304,7 @@
     font-size: 1rem;
     line-height: 1.25rem;
     font-weight: 600; 
+    border: none;
     &:hover {
         background-color: $color-dark-sec;
     }
