@@ -244,8 +244,7 @@ body {
         @include desktop {
             width:50%;
             margin: auto;
-        }
-        
+        }  
     }
     &__previous{
         display: flex;
@@ -258,7 +257,10 @@ body {
     }
     &__added {
         display: flex;
-        flex-direction: column;    
+        flex-direction: column;   
+        @include tablet {
+            margin-bottom: 2rem;
+        } 
     }
     
     &__known-user {
