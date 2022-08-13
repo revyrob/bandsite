@@ -117,6 +117,8 @@ body {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 1.75rem;
+    padding-top: 2rem;
   }
 }
 .navbar__logo {
@@ -170,13 +172,24 @@ body {
   text-align: center;
   width: 100%;
 }
-.navbar__itemList {
+.navbar__item {
+  color: #E1E1E1;
+  text-decoration: none;
+  width: 50%;
+  transition: 0.5s;
+}
+@media (min-width: 768px) {
+  .navbar__item {
+    width: auto;
+  }
+}
+.navbar__item-list {
   display: flex;
   justify-content: stretch;
   font-size: 1rem;
 }
 @media (min-width: 768px) {
-  .navbar__itemList {
+  .navbar__item-list {
     margin-left: 5rem;
     align-items: stretch;
     justify-content: space-between;
@@ -184,28 +197,30 @@ body {
     min-width: 15rem;
   }
 }
-.navbar__item {
+.navbar__nonActive {
   color: #E1E1E1;
-  text-decoration: none;
   width: 50%;
-  transition: 0.5s;
+  padding-bottom: 1.65rem;
+  font-weight: 500;
 }
-.navbar__item:hover {
-  color: #000000;
-  text-shadow: 1px 1px #FFFFFF;
-  font-weight: 800;
+@media (min-width: 768px) {
+  .navbar__nonActive {
+    width: auto;
+  }
+}
+.navbar__nonActive:hover {
+  color: #FFFFFF;
+  border-bottom: 4px solid #FFFFFF;
+  padding-bottom: 1.65rem;
 }
 .navbar__active {
   border-bottom: 4px solid #FFFFFF;
   width: 50%;
   padding-bottom: 1.65rem;
   font-weight: 800;
-  transition: 0.5s;
 }
 .navbar__active:hover {
-  border-bottom: 4px solid #000000;
-  text-shadow: 1px 1px #FFFFFF;
-  box-shadow: 0px 1px #FFFFFF;
+  font-weight: 500;
 }
 @media (min-width: 768px) {
   .navbar__active {
@@ -220,12 +235,13 @@ body {
   background-image: linear-gradient(to bottom, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
   background-position: center;
   background-size: cover;
-  min-height: 200px;
+  min-height: 270px;
   max-height: 1000px;
-  height: 35vh;
+  height: 50vh;
 }
 @media (min-width: 768px) {
   .hero {
+    min-height: 400px;
     height: 70vh;
   }
 }
@@ -233,6 +249,7 @@ body {
   .hero {
     align-items: center;
     justify-content: baseline;
+    min-height: 500px;
   }
 }
 .hero__title {
@@ -254,12 +271,7 @@ body {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
-    margin-left: 2rem;
-  }
-}
-@media (min-width: 1100px) {
-  .hero__title {
-    max-width: 1100px;
+    padding: 0 1.75rem;
   }
 }
 
@@ -278,6 +290,7 @@ body {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 1.75rem;
   }
 }
 .about__title {
@@ -298,6 +311,7 @@ body {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 1.75rem;
   }
 }
 @media (min-width: 768px) {
@@ -310,8 +324,10 @@ body {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 1.75rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    padding: 0;
   }
 }
 @media (min-width: 1100px) {
@@ -319,19 +335,7 @@ body {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
-  }
-}
-.about__img--container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.about__img {
-  width: 90vw;
-}
-@media (min-width: 768px) {
-  .about__img {
-    width: 75vw;
+    padding: 0 1.75rem;
   }
 }
 .about__quote {
@@ -346,6 +350,11 @@ body {
   .about__quote {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+}
+@media (min-width: 1100px) {
+  .about__quote {
+    width: 73%;
   }
 }
 .about__quote--author {
@@ -367,13 +376,38 @@ body {
   }
 }
 .about__container, .comment__user-input {
-  margin: 2rem 0 1rem;
+  display: flex;
+  align-items: left;
+  justify-content: center;
 }
 @media (min-width: 768px) {
   .about__container, .comment__user-input {
     width: 75vw;
     margin: auto;
     padding: 1rem 0 0;
+  }
+}
+@media (min-width: 1100px) {
+  .about__container, .comment__user-input {
+    margin: 0;
+  }
+}
+.about__container--img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .about__container--img {
+    width: 75vw;
+    margin: auto;
+    padding: 1rem 0 1.5rem;
+  }
+}
+@media (min-width: 1100px) {
+  .about__container--img {
+    width: 67vw;
   }
 }
 .about__container--quote {
@@ -400,7 +434,8 @@ body {
 }
 @media (min-width: 1100px) {
   .about__container--quote {
-    width: auto;
+    width: 67vw;
+    padding-top: 0;
   }
 }
 .about__container--text {
@@ -418,10 +453,24 @@ body {
 }
 @media (min-width: 1100px) {
   .about__container--text {
-    width: auto;
+    width: 67vw;
+  }
+}
+.about__img {
+  width: 90vw;
+}
+@media (min-width: 768px) {
+  .about__img {
+    width: 75vw;
+  }
+}
+@media (min-width: 1100px) {
+  .about__img {
+    width: 67vw;
   }
 }
 .about__subtitle {
+  margin: 2rem 0 1rem 0;
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
@@ -435,6 +484,14 @@ body {
 @media (min-width: 768px) {
   .about__subtitle {
     font-size: 1.5rem;
+    width: 75vw;
+    margin: auto;
+    padding: 1rem 0 0;
+  }
+}
+@media (min-width: 1100px) {
+  .about__subtitle {
+    width: 67vw;
   }
 }
 .about__info {
@@ -472,6 +529,7 @@ body {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 1.75rem;
   }
 }
 .photo-gallery__title {
@@ -492,11 +550,18 @@ body {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 1.75rem;
   }
 }
 @media (min-width: 768px) {
   .photo-gallery__title {
     margin-left: 0;
+  }
+}
+@media (min-width: 1100px) {
+  .photo-gallery__title {
+    padding-left: 0;
+    margin-top: 3rem;
   }
 }
 .photo-gallery__images {
@@ -541,6 +606,7 @@ body {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 1.75rem;
   }
 }
 .comment__title {
@@ -561,6 +627,12 @@ body {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 1.75rem;
+  }
+}
+@media (min-width: 1100px) {
+  .comment__title {
+    padding-left: 0;
   }
 }
 .comment__wrapper {
@@ -613,7 +685,7 @@ body {
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: 600;
-  border: none;
+  border: 1px solid #323232;
   background-color: #323232;
   color: #FFFFFF;
   width: 100%;
@@ -754,7 +826,7 @@ body {
 @media (min-width: 1100px) {
   .footer {
     margin-top: 3rem;
-    padding-top: 2rem;
+    padding-top: 3rem;
   }
 }
 @media (min-width: 1100px) {
@@ -763,6 +835,7 @@ body {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 1.75rem;
   }
 }
 .footer__title {

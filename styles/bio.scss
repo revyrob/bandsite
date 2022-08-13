@@ -15,15 +15,9 @@ body {
 // hero css
 .hero {
     @include hero;
-    &__title {
-        //what is going on with my title
-        @include desktop {
-            max-width: 1100px;
-        }
-    }
 }
 
-// about section NEED TO PUT THIS IN THE RIGHT STYLING
+// about section
 .about {
     display: flex;
     flex-direction: column;  
@@ -44,32 +38,24 @@ body {
             @include wrapper($desktop-width);
             margin-top: 2rem;
             margin-bottom: 1rem;
+            padding:0;
         }
     }
     &__wrapper {
         @include desktop {
-            @include wrapper(1100px);
+            @include wrapper($desktop-width);
+            
         }
     }
-    &__img--container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-    }
-    &__img {
-        width: 90vw;
-        @include tablet {
-            width: 75vw;
-        }
-        @include desktop {
-        }
-    }
+    
     &__quote {
         @include section__subheader;
         margin-top: 1rem;
         display: flex;
         flex-direction: column;
+        @include desktop{
+            width:73%;
+        }
         &--author {
             @include section__subheader;
             margin-top: 1rem;
@@ -81,11 +67,31 @@ body {
     }
     
     &__container {
-        margin: 2rem 0 1rem;
+        display: flex;
+        align-items:left;
+        justify-content: center;
         @include tablet {
             width: 75vw;
             margin: auto;
             padding: 1rem 0 0;
+        }
+        @include desktop {
+            margin:0;
+        }
+        &--img{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            @include tablet {
+                width: 75vw;
+                margin: auto;
+                padding: 1rem 0 1.5rem;
+            }
+            @include desktop {
+                width: 67vw;
+            }
         }
         &--quote {
             @include section__subheader;
@@ -93,14 +99,15 @@ body {
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
-
+            
             @include tablet {
                 width: 75vw;
                 margin: auto;
                 padding: 1rem 0 1.5rem;
             }
             @include desktop {
-                width: auto;
+                width: 67vw;
+                padding-top: 0;;
             }
         }
         &--text {
@@ -114,14 +121,30 @@ body {
                 padding: 1rem 0 1.5rem;   
             }
             @include desktop {
-                width: auto;
+                width: 67vw;
             }
         }
     }
+    &__img{
+            width: 90vw;
+            @include tablet {
+                width: 75vw;
+            }
+            @include desktop {
+               width: 67vw;
+            }
+    }
     &__subtitle {
+        margin: 2rem 0 1rem 0;
         @include section__subheader;
         @include tablet {
             font-size: 1.5rem;
+            width: 75vw;
+            margin: auto;
+            padding: 1rem 0 0;
+        }
+        @include desktop {
+            width: 67vw;
         }
     }
     &__info {
@@ -158,6 +181,10 @@ body {
         margin: 1.5rem 0 0 1rem;
         @include tablet {
             margin-left: 0;
+        }
+        @include desktop{
+            padding-left: 0;
+            margin-top: 3rem;
         }
     }
     &__images {
@@ -198,6 +225,9 @@ body {
     &__title {
         @include section__title;
         margin: 0;
+        @include desktop {
+            padding-left: 0;
+        }
     }
     &__user-input {
         @extend .about__container;
@@ -230,8 +260,7 @@ body {
         display: flex;
         flex-direction: column;    
     }
-
-    //figure out why the user pic gets closer at desktop
+    
     &__known-user {
         height: 50px;
         width: 50px;
@@ -241,7 +270,7 @@ body {
         margin-top: 40%;
         @include desktop {
             margin-top: 90%;
-                }
+        }
     }
     &__user-input--submit{
         @include buttons;
@@ -272,7 +301,6 @@ body {
         flex-direction: row;
         justify-content: space-between;
         padding-bottom: .5rem;
-        
     }
     &__name {
         @include body;
@@ -313,6 +341,7 @@ body {
     &__headings {
         color: $color-light;
         @include lables;
+        
     }
     &__input {
         font-family: $font-primary;

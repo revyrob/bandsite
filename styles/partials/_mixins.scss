@@ -1,34 +1,34 @@
 @use './variables' as *;
 
 @mixin tablet {
-  @media (min-width: $tablet-width) {
-    @content;
-  }
+    @media (min-width: $tablet-width) {
+        @content;
+    }
 }
 
 @mixin desktop {
-  @media (min-width: $desktop-width) {
-    @content;
-  }
+    @media (min-width: $desktop-width) {
+        @content;
+    }
 }
 
 @mixin wrapper ($desktop-width) {
-  max-width: $desktop-width;
-  width: 100%;
-  margin: 0 auto;
+    max-width: $desktop-width;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.75rem;
 }
 
-//there is a comment about doing this in the reset??
 @mixin body {
-  font-family: $font-primary;
-  font-weight: normal;
-  line-height: 1.125rem;
-  font-size: 0.8125;
-  font-weight: 400;
-  @include tablet {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-  }
+    font-family: $font-primary;
+    font-weight: normal;
+    line-height: 1.125rem;
+    font-size: 0.8125;
+    font-weight: 400;
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
 }
 
 @mixin navbar {
@@ -47,6 +47,7 @@
         }
         @include desktop {
             @include wrapper ($desktop-width);
+            padding-top: 2rem;
         }
     }
     &__logo {
@@ -71,40 +72,51 @@
         text-align: center;
         width: 100%;
     }
-    &__itemList {
-        display: flex;
-        justify-content: stretch;
-        font-size: 1rem;
-        @include tablet {
-            margin-left: 5rem;
-            align-items: stretch;
-            justify-content: space-between;
-            max-width: 25%;
-            min-width: 15rem;
-        }
-    }
+    
     &__item{
         color: $color-light-sec;
         text-decoration: none;
         width: 50%;
         transition: 0.5s;
-        &:hover {
-            color: $color-dark-sec;
-            text-shadow: 1px 1px $color-accent;
-            font-weight: 800;
+        @include tablet {
+            width:auto;
+        }
+        &-list {
+            display: flex;
+            justify-content: stretch;
+            font-size: 1rem;
+            @include tablet {
+                margin-left: 5rem;
+                align-items: stretch;
+                justify-content: space-between;
+                max-width: 25%;
+                min-width: 15rem;
+            }
         }
         
     } 
+    &__nonActive{
+        color: $color-light-sec;
+        width: 50%;
+        padding-bottom: 1.65rem;
+        font-weight: 500;
+        @include tablet {
+            width:auto;
+        }
+        &:hover {
+            color: $color-accent;
+            border-bottom: 4px solid $color-accent;
+            padding-bottom: 1.65rem;
+            
+        }
+    }
     &__active {
         border-bottom: 4px solid $color-accent;
         width: 50%;
         padding-bottom: 1.65rem;
         font-weight: 800;
-        transition: 0.5s;
         &:hover {
-            border-bottom: 4px solid $color-dark-sec;
-            text-shadow: 1px 1px $color-accent;
-            box-shadow: 0px 1px $color-accent;
+            font-weight: 500;
         }
         @include tablet {
             width: auto;
@@ -116,20 +128,21 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    background-image: linear-gradient(to bottom,$color-dark-opacity, $color-dark-opacity), 
+    background-image: linear-gradient(to bottom, rgb(50, 50, 50, 0.5), rgb(50, 50, 50, 0.5)), 
     url(../assets/images/hero-bio.jpg);
     background-position: center;
     background-size:cover;
-    min-height: 200px;
+    min-height: 270px;
     max-height: 1000px;
-    height: 35vh;
+    height: 50vh;
     @include tablet {
+        min-height: 400px;
         height: 70vh;
     }
-    //i still need the two her items to line up at the bottom
     @include desktop {
         align-items: center;
         justify-content: baseline;
+        min-height: 500px;
     }
     &__title {
         color: $color-accent;
@@ -143,24 +156,23 @@
             line-height: 4.25rem;
         }
         @include desktop {
-            @include wrapper (1100px);
-            margin-left: 2rem;
+            @include wrapper ($desktop-width);
         }
     }
 }
 
 @mixin section__title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        line-height: 1.375rem;       ;
-        @include tablet {
-            font-size: 2.25rem;
-            margin-left: 2rem;
-            line-height: 2.75rem;
-        }
-        @include desktop {
-            @include wrapper ($desktop-width);
-        }
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.375rem;       ;
+    @include tablet {
+        font-size: 2.25rem;
+        margin-left: 2rem;
+        line-height: 2.75rem;
+    }
+    @include desktop {
+        @include wrapper ($desktop-width);
+    }
 }
 
 @mixin section__subheader {
@@ -178,9 +190,9 @@
     color: $color-accent;
     padding: 1.5rem;
     position: relative;
-    @include desktop {
-    margin-top: 3rem;
-    padding-top: 2rem;
+    @include desktop{
+        margin-top: 3rem;
+        padding-top: 3rem;
     }
     &__wrapper {
         @include desktop {
@@ -257,7 +269,7 @@
             }
         }
     }
-   
+    
     
     &__logo-img {
         height: 1.25rem;
@@ -281,16 +293,16 @@
             }
         }
     }
-
-&__copyright {
-    font-size: 0.79rem;
-    line-height: 1.125rem;
-    font-weight: 400;
-    @include tablet {
-        padding-top: 1.5rem;
-        font-size: 0.875rem;
+    
+    &__copyright {
+        font-size: 0.79rem;
+        line-height: 1.125rem;
+        font-weight: 400;
+        @include tablet {
+            padding-top: 1.5rem;
+            font-size: 0.875rem;
+        }
     }
-}
 }
 
 @mixin lables{
@@ -306,7 +318,7 @@
     font-size: 1rem;
     line-height: 1.25rem;
     font-weight: 600; 
-    border: none;
+    border: 1px solid $color-dark;
     &:hover {
         background-color: $color-dark-sec;
     }
