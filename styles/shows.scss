@@ -119,12 +119,10 @@ body {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            align-items: baseline;
-            
+            align-items: baseline; 
         }
         &--selected {
             background-color: $color-light-sec;
-            
         }
         &--title {
             @include lables;
@@ -146,14 +144,16 @@ body {
             @include tablet {
                 width: 25%;
             }   
-        }
-        &--info-dark {
-            @extend .shows__card--info;
-            font-weight: 600;
-            
-            @include tablet {
-                width: 25%;
-            }  
+            @include desktop {
+                padding: 0;
+            }
+            &-dark{
+                @extend .shows__card--info;
+                font-weight: 600;
+                @include tablet {
+                    width: 25%;
+                }  
+            }
         }
         &--buy{
             @include buttons;

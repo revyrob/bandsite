@@ -129,7 +129,7 @@
     //i still need the two her items to line up at the bottom
     @include desktop {
         align-items: center;
-    justify-content: baseline;
+        justify-content: baseline;
     }
     &__title {
         color: $color-accent;
@@ -141,11 +141,10 @@
             font-size: 3.75rem;
             margin: 0rem 2rem;
             line-height: 4.25rem;
-
-
         }
         @include desktop {
-            @include wrapper ($desktop-width);
+            @include wrapper (1100px);
+            margin-left: 2rem;
         }
     }
 }
@@ -178,8 +177,11 @@
     background-color: $color-dark;
     color: $color-accent;
     padding: 1.5rem;
-    
     position: relative;
+    @include desktop {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    }
     &__wrapper {
         @include desktop {
             padding: 0;

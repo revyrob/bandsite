@@ -15,9 +15,15 @@ body {
 // hero css
 .hero {
     @include hero;
+    &__title {
+        //what is going on with my title
+        @include desktop {
+            max-width: 1100px;
+        }
+    }
 }
 
-// about section
+// about section NEED TO PUT THIS IN THE RIGHT STYLING
 .about {
     display: flex;
     flex-direction: column;  
