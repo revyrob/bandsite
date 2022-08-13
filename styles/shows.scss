@@ -10,16 +10,16 @@ body {
 // navbar css
 .navbar {
     @include navbar;
-    &__item{
-        @include tablet {
-            width: auto;
-        }
-    } 
-    &__active {
-        @include tablet {
-            width: auto;
-        }
-    }
+    // &__item{
+    //     @include tablet {
+    //         width: auto;
+    //     }
+    // } 
+    // &__active {
+    //     @include tablet {
+    //         width: auto;
+    //     }
+    // }
 }
 
 // hero css
@@ -41,6 +41,11 @@ body {
             font-weight: 600;
             font-size: 3.25rem;
         }
+        @include desktop {
+            width: 100%;
+            padding: 0;
+            font-size: 3.75rem;
+        }
     }
     &__container {
         display: flex;
@@ -48,7 +53,10 @@ body {
         @include desktop {
             display: flex;
             flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
             @include wrapper($desktop-width);
+           
         }
     }
     &__subtitle {
@@ -60,6 +68,9 @@ body {
             font-weight: 600;
             font-size: 1.25rem;
             line-height: 3rem;
+        }
+        @include desktop {
+            margin-top: 0;
         }
     }
     &__wrapper {
@@ -102,10 +113,10 @@ body {
         @include tablet {
             margin: 2rem 0 0 1rem;
         }
-        
         @include desktop {
             margin: 0;
             width: auto;
+            padding:0;
         }
     }
     
@@ -209,15 +220,15 @@ body {
     }
     
 }
-.showsList {
-    // @include tablet {
-        //     margin: 0 2rem 2rem;
-        // }
-        @include desktop {
-            @include wrapper($desktop-width);
+// .showsList {
+//     // @include tablet {
+//     //         margin: 0 2rem 2rem;
+//     //     }
+//         @include desktop {
+//             @include wrapper($desktop-width);
             
-        }
-    }
+//         }
+//     }
     
     .footer {
         @include footer;  

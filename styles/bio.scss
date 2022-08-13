@@ -38,33 +38,28 @@ body {
             @include wrapper($desktop-width);
             margin-top: 2rem;
             margin-bottom: 1rem;
+            padding:0;
         }
     }
     &__wrapper {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
         @include desktop {
-            @include wrapper(1100px);
-        }
-    }
-    &__img--container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-    }
-    &__img {
-        width: 90vw;
-        @include tablet {
-            width: 75vw;
-        }
-        @include desktop {
+            @include wrapper($desktop-width);
             
         }
     }
+    
     &__quote {
         @include section__subheader;
         margin-top: 1rem;
         display: flex;
         flex-direction: column;
+        @include desktop{
+            width:73%;
+        }
         &--author {
             @include section__subheader;
             margin-top: 1rem;
@@ -76,27 +71,48 @@ body {
     }
     
     &__container {
-        margin: 2rem 0 1rem 0;
+        display: flex;
+        align-items:left;
+        justify-content: center;
+        // margin: 2rem 0 1rem 0;
         @include tablet {
             width: 75vw;
             margin: auto;
-            padding: 1rem 0 0 0;
+            padding: 1rem 0 0;
         }
-        
-        &--quote {
-            @include section__subheader;
+        @include desktop {
+            margin:0;
+        }
+        &--img{
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             justify-content: center;
-
+            
             @include tablet {
                 width: 75vw;
                 margin: auto;
                 padding: 1rem 0 1.5rem;
             }
             @include desktop {
-                width: auto;
+                width: 67vw;
+            }
+        }
+        &--quote {
+            @include section__subheader;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            
+            @include tablet {
+                width: 75vw;
+                margin: auto;
+                padding: 1rem 0 1.5rem;
+            }
+            @include desktop {
+                width: 67vw;
+                padding-top: 0;;
             }
         }
         &--text {
@@ -110,14 +126,30 @@ body {
                 padding: 1rem 0 1.5rem;   
             }
             @include desktop {
-                width: auto;
+                width: 67vw;
             }
         }
     }
+    &__img{
+            width: 90vw;
+            @include tablet {
+                width: 75vw;
+            }
+            @include desktop {
+               width: 67vw;
+            }
+    }
     &__subtitle {
+        margin: 2rem 0 1rem 0;
         @include section__subheader;
         @include tablet {
             font-size: 1.5rem;
+            width: 75vw;
+            margin: auto;
+            padding: 1rem 0 0;
+        }
+        @include desktop {
+            width: 67vw;
         }
     }
     &__info {
@@ -154,6 +186,10 @@ body {
         margin: 1.5rem 0 0 1rem;
         @include tablet {
             margin-left: 0;
+        }
+        @include desktop{
+            padding-left: 0;
+            margin-top: 3rem;
         }
     }
     &__images {
@@ -194,6 +230,9 @@ body {
     &__title {
         @include section__title;
         margin: 0;
+        @include desktop {
+            padding-left: 0;
+        }
     }
     &__user-input {
         @extend .about__container;
@@ -226,7 +265,7 @@ body {
         display: flex;
         flex-direction: column;    
     }
-
+    
     //figure out why the user pic gets closer at desktop
     &__known-user {
         height: 50px;
@@ -237,7 +276,7 @@ body {
         margin-top: 40%;
         @include desktop {
             margin-top: 90%;
-                }
+        }
     }
     &__user-input--submit{
         @include buttons;
@@ -322,6 +361,7 @@ body {
         &--comment {
             @extend .form__input;
             height: 7rem;
+            resize: none;
         }
     }
 }
@@ -330,3 +370,23 @@ body {
     @include footer;  
 }
 
+// &__container {
+    //     display: flex;
+    //     align-items:center;
+    //     justify-content: center;
+    //     @include desktop{
+        //         margin:0;
+        //     }
+        
+        // }
+        
+        // &__container-img {
+            //     width: 90vw;
+            //     @include tablet {
+                //         width: 75vw;
+                //     }
+                //     @include desktop {
+                    //         margin: 0;
+                    //         padding: 0;
+                    //     }
+                    // }
