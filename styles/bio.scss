@@ -42,10 +42,6 @@ body {
         }
     }
     &__wrapper {
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
         @include desktop {
             @include wrapper($desktop-width);
             
@@ -74,7 +70,6 @@ body {
         display: flex;
         align-items:left;
         justify-content: center;
-        // margin: 2rem 0 1rem 0;
         @include tablet {
             width: 75vw;
             margin: auto;
@@ -266,7 +261,6 @@ body {
         flex-direction: column;    
     }
     
-    //figure out why the user pic gets closer at desktop
     &__known-user {
         height: 50px;
         width: 50px;
@@ -307,7 +301,6 @@ body {
         flex-direction: row;
         justify-content: space-between;
         padding-bottom: .5rem;
-        
     }
     &__name {
         @include body;
@@ -370,23 +363,3 @@ body {
     @include footer;  
 }
 
-// &__container {
-    //     display: flex;
-    //     align-items:center;
-    //     justify-content: center;
-    //     @include desktop{
-        //         margin:0;
-        //     }
-        
-        // }
-        
-        // &__container-img {
-            //     width: 90vw;
-            //     @include tablet {
-                //         width: 75vw;
-                //     }
-                //     @include desktop {
-                    //         margin: 0;
-                    //         padding: 0;
-                    //     }
-                    // }

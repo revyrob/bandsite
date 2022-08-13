@@ -10,16 +10,6 @@ body {
 // navbar css
 .navbar {
     @include navbar;
-    // &__item{
-    //     @include tablet {
-    //         width: auto;
-    //     }
-    // } 
-    // &__active {
-    //     @include tablet {
-    //         width: auto;
-    //     }
-    // }
 }
 
 // hero css
@@ -131,16 +121,13 @@ body {
             flex-direction: row;
             justify-content: space-between;
             align-items: baseline;
-            
         }
         &--selected {
             background-color: $color-light-sec;
-            
         }
         &--title {
             @include lables;
             color: $color-light;
-            // font-size: 0.9rem;
             padding-bottom: 1rem;
             
             @include tablet {
@@ -173,7 +160,7 @@ body {
             width: 100%;
             padding: 1rem 0;
             border-radius: 8px;
-            
+            border: 1px solid $color-dark;
             @include tablet {
                 width: 25%;
             }
@@ -208,7 +195,6 @@ body {
             &--title {
                 font-weight: 600;
                 color: $color-light;
-                // padding-bottom: 1.5rem;
                 font-size: 1.1rem;
                 @include tablet {
                     width: 25%;
@@ -220,16 +206,7 @@ body {
     }
     
 }
-// .showsList {
-//     // @include tablet {
-//     //         margin: 0 2rem 2rem;
-//     //     }
-//         @include desktop {
-//             @include wrapper($desktop-width);
-            
-//         }
-//     }
-    
+
     .footer {
         @include footer;  
     }

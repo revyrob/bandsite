@@ -178,10 +178,10 @@ body {
   width: 50%;
   transition: 0.5s;
 }
-.navbar__item:hover {
-  color: #000000;
-  text-shadow: 1px 1px #FFFFFF;
-  font-weight: 800;
+@media (min-width: 768px) {
+  .navbar__item {
+    width: auto;
+  }
 }
 .navbar__item-list {
   display: flex;
@@ -197,17 +197,30 @@ body {
     min-width: 15rem;
   }
 }
+.navbar__nonActive {
+  color: #E1E1E1;
+  width: 50%;
+  padding-bottom: 1.65rem;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .navbar__nonActive {
+    width: auto;
+  }
+}
+.navbar__nonActive:hover {
+  color: #FFFFFF;
+  border-bottom: 4px solid #FFFFFF;
+  padding-bottom: 1.65rem;
+}
 .navbar__active {
   border-bottom: 4px solid #FFFFFF;
   width: 50%;
   padding-bottom: 1.65rem;
   font-weight: 800;
-  transition: 0.5s;
 }
 .navbar__active:hover {
-  border-bottom: 4px solid #000000;
-  text-shadow: 1px 1px #FFFFFF;
-  box-shadow: 0px 1px #FFFFFF;
+  font-weight: 500;
 }
 @media (min-width: 768px) {
   .navbar__active {
@@ -460,11 +473,13 @@ body {
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: 600;
+  border: 1px solid #323232;
   background-color: #323232;
   color: #FFFFFF;
   width: 100%;
   padding: 1rem 0;
   border-radius: 8px;
+  border: 1px solid #323232;
 }
 .shows__card--buy:hover {
   background-color: #000000;
