@@ -668,6 +668,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 768px) {
+  .comment__added {
+    margin-bottom: 2rem;
+  }
+}
 .comment__known-user {
   height: 50px;
   width: 50px;
