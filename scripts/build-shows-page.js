@@ -154,20 +154,14 @@ axios.get(showsURL).then(response => {
         });
         list.appendChild(card);
     })
-<<<<<<< HEAD
+
 
 }).catch((err) => {
     console.error(err);
 });
 
-=======
-    
-    
-    
-}).catch((err) => {
-    console.error(err);
-});
->>>>>>> sprint-3
+
+
 
 
 
