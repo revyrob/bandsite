@@ -125,6 +125,8 @@ function clearComments() {
     clear.value = ' ';
     clear2.value= ' ';
 }
+
+
 /*
 *Event listener for requied fiel
 */
