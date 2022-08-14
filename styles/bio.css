@@ -826,6 +826,9 @@ body {
   height: 7rem;
   resize: none;
 }
+.form__invalid {
+  border: 1px solid red;
+}
 
 .footer {
   background-color: #323232;

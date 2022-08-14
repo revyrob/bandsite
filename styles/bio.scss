@@ -356,14 +356,25 @@ body {
         border-radius: 5px;
         border: 1px solid $color-light;
         padding: 1rem;
+        
         &--comment {
             @extend .form__input;
             height: 7rem;
             resize: none;
         }
     }
+    &__invalid{
+        border: 1px solid red;
+    }
 }
 
+// input.required:invalid {
+//         border: 1px solid red;
+// }
+// textarea.required:invalid {
+//     border: 1px solid red;
+
+// }
 .footer {
     @include footer;  
 }

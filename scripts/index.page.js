@@ -75,28 +75,45 @@ function clearComments() {
     clear.value = ' ';
     clear2.value= ' ';
 }
-
+/*
+*Event listener for requied fiel
+*/
+// function validInfo() {
+//     let name  = document.querySelector('.form__input');
+//     let comment  = document.querySelector('.form__input--comment');
+    
+//     if(name.value === '' || name.value === null)
+//     { name.classList.add('.form__invalid');
+//     } else if(comment.value === '' || comment.value === null) {
+//         comment.classList.add('.form__invalid');  
+//     } else if(name.value === true) {
+//         name.classList.remove('.form__invalid');
+//     } else if(comment.value === true) {
+//         name.classList.remove('.form__invalid');
+//     }
+// }
 /* 
 *event listener which pushes to the online API
 */
 commentForm.addEventListener('submit', (event) => {
+    // event.validInfo();
     event.preventDefault();
     axios({
         method:'post',
         url: commentsURL,
         data : {
             name: event.target.name.value,
-            comment: event.target.comment.value
+            comment: event.target.comment.value 
         }  
     }).catch((err) => {
         console.error(err);
     });
     clearComments();
-   
+    console.log(validInfo);
     //generate comments down below
     //let a setTimeout run before clearing comments
     setTimeout(() => { displayComments();}, "500")
 })
-        
+
 //call function
 displayComments();
