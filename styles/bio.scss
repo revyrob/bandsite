@@ -368,3 +368,20 @@ body {
     @include footer;  
 }
 
+.like {
+    
+    &__div {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    &__emoji {
+        display: inline;
+        border:  none;
+        background-color: $color-accent;
+    }
+    &__num{
+        display: inline;
+        
+    }
+}
