@@ -27,39 +27,89 @@ function displayComments() {
             //exterior comment wrapper
             const commentWrapper = document.createElement('div');
             commentWrapper.classList.add('comment__wrapper');
-            commentEntries.prepend(commentWrapper);
+            
             
             //img div
             const userImgSection = document.createElement('div');
             userImgSection.classList.add('comment__user-image');
-            commentWrapper.appendChild(userImgSection);
+            
             
             //unknown circle user image greyed
             const userImg = document.createElement('div');
             userImg.classList.add('comment__unknown-user');
-            userImgSection.appendChild(userImg);
+            
             
             //comment area
             const commentDiv = document.createElement('div');
             commentDiv.classList.add('comment__area');
-            commentWrapper.appendChild(commentDiv);
+            
             
             //comment user goes to comment area
             const commentUserDiv = document.createElement('div');
             commentUserDiv.classList.add('comment__user');
-            commentDiv.appendChild(commentUserDiv);
+            
             
             //name added to div
             const nameElem = document.createElement('h4');
             nameElem.classList.add('comment__name');
             nameElem.innerText = myArray.name;
-            commentUserDiv.appendChild(nameElem);
+           
             
             //comment added to div
             const commentElem = document.createElement('p');
             commentElem.classList.add('comment__comment');
             commentElem.innerText = myArray.comment;
+            
+            
+            // div, number and emoji
+            // add a like button
+            const likeElem = document.createElement('div');
+            likeElem.classList.add('like__div');
+            
+            
+            //add like emoji
+            const likeEmoji = document.createElement('button');
+            likeEmoji.classList.add('like__emoji');
+            likeEmoji.innerText = '👍';
+            
+            
+            //add like number
+            const likeNum = document.createElement('p');
+            likeNum.classList.add('like__num');
+            likeNum.innerText = myArray.likes;
+            
+
+            //all appends
+            commentEntries.prepend(commentWrapper);
+            commentWrapper.appendChild(userImgSection);
+            userImgSection.appendChild(userImg);
+            commentWrapper.appendChild(commentDiv);
+            commentDiv.appendChild(commentUserDiv);
+            commentUserDiv.appendChild(nameElem);
             commentDiv.appendChild(commentElem);
+            commentDiv.appendChild(likeElem);
+            likeElem.appendChild(likeEmoji);
+            likeElem.appendChild(likeNum);
+
+            // likeEmoji.addEventListener('click', (e) => {
+            //     let likeValue = e.target.likes.value;
+            //     console.log(likeValue);
+            //     likeValue++;
+
+            //     axios({
+            //         method:'post',
+            //         url: commentsURL,
+            //         data : {
+            //             name: e.target.name.value,
+            //             comment: e.target.comment.value,
+            //             likes: e.target.likes.value,
+            //         }  
+            //     }).catch((err) => {
+            //         console.error(err);
+            //     });
+                
+            // })
+            
         });
     }).catch((err) => {
         console.error(err);
@@ -81,7 +131,7 @@ function clearComments() {
 // function validInfo() {
 //     let name  = document.querySelector('.form__input');
 //     let comment  = document.querySelector('.form__input--comment');
-    
+
 //     if(name.value === '' || name.value === null)
 //     { name.classList.add('.form__invalid');
 //     } else if(comment.value === '' || comment.value === null) {
@@ -92,6 +142,7 @@ function clearComments() {
 //         name.classList.remove('.form__invalid');
 //     }
 // }
+
 /* 
 *event listener which pushes to the online API
 */
@@ -109,7 +160,6 @@ commentForm.addEventListener('submit', (event) => {
         console.error(err);
     });
     clearComments();
-    console.log(validInfo);
     //generate comments down below
     //let a setTimeout run before clearing comments
     setTimeout(() => { displayComments();}, "500")
@@ -117,3 +167,14 @@ commentForm.addEventListener('submit', (event) => {
 
 //call function
 displayComments();
+
+// /look into using this code to delete a post
+//I should be able to make an click event on a the comment card for each
+// axios.delete(URL, {
+//     headers: {
+//       Authorization: authorizationToken
+//     },
+//     data: {
+//       source: source
+//     }
+//   });

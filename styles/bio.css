@@ -964,4 +964,18 @@ body {
     padding-top: 1.5rem;
     font-size: 0.875rem;
   }
+}
+
+.like__div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.like__emoji {
+  display: inline;
+  border: none;
+  background-color: #FFFFFF;
+}
+.like__num {
+  display: inline;
 }/*# sourceMappingURL=bio.css.map */
