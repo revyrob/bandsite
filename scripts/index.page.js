@@ -53,13 +53,17 @@ function displayComments() {
             const nameElem = document.createElement('h4');
             nameElem.classList.add('comment__name');
             nameElem.innerText = myArray.name;
-           
             
+            //add time stamp
+            const date = document.createElement('p');
+            date.classList.add('comment__timeStamp');
+            const newDate = new Date(myArray.timestamp).toLocaleDateString();
+            date.innerText = newDate;
+
             //comment added to div
             const commentElem = document.createElement('p');
             commentElem.classList.add('comment__comment');
             commentElem.innerText = myArray.comment;
-            
             
             // div, number and emoji
             // add a like button
@@ -78,7 +82,7 @@ function displayComments() {
             likeNum.classList.add('like__num');
             likeNum.innerText = myArray.likes;
             
-
+            
             //all appends
             commentEntries.prepend(commentWrapper);
             commentWrapper.appendChild(userImgSection);
@@ -87,9 +91,10 @@ function displayComments() {
             commentDiv.appendChild(commentUserDiv);
             commentUserDiv.appendChild(nameElem);
             commentDiv.appendChild(commentElem);
-            // commentDiv.appendChild(likeElem);
-            // likeElem.appendChild(likeEmoji);
-            // likeElem.appendChild(likeNum);
+            commentUserDiv.appendChild(date);
+            commentDiv.appendChild(likeElem);
+            likeElem.appendChild(likeEmoji);
+            likeElem.appendChild(likeNum);
 
         });
     }).catch((err) => {
@@ -123,11 +128,11 @@ commentForm.addEventListener('submit', (event) => {
         console.error(err);
     });
     clearComments();
-   
+    
     //generate comments down below
     //let a setTimeout run before clearing comments
     setTimeout(() => { displayComments();}, "500")
 })
-        
+
 //call function
 displayComments();
