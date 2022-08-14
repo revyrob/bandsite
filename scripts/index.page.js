@@ -87,9 +87,9 @@ function displayComments() {
             commentDiv.appendChild(commentUserDiv);
             commentUserDiv.appendChild(nameElem);
             commentDiv.appendChild(commentElem);
-            commentDiv.appendChild(likeElem);
-            likeElem.appendChild(likeEmoji);
-            likeElem.appendChild(likeNum);
+            // commentDiv.appendChild(likeElem);
+            // likeElem.appendChild(likeEmoji);
+            // likeElem.appendChild(likeNum);
 
         });
     }).catch((err) => {
