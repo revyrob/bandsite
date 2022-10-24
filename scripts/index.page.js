@@ -53,14 +53,19 @@ function displayComments() {
             const nameElem = document.createElement('h4');
             nameElem.classList.add('comment__name');
             nameElem.innerText = myArray.name;
-           
-            
+
+            //add time stamp
+            const date = document.createElement('p');
+            date.classList.add('comment__timeStamp');
+            const newDate = new Date(myArray.timestamp).toLocaleDateString();
+            date.innerText = newDate;
+
             //comment added to div
             const commentElem = document.createElement('p');
             commentElem.classList.add('comment__comment');
             commentElem.innerText = myArray.comment;
             
-            
+
             // div, number and emoji
             // add a like button
             const likeElem = document.createElement('div');
@@ -87,29 +92,12 @@ function displayComments() {
             commentDiv.appendChild(commentUserDiv);
             commentUserDiv.appendChild(nameElem);
             commentDiv.appendChild(commentElem);
+            commentUserDiv.appendChild(date);
+
             commentDiv.appendChild(likeElem);
             likeElem.appendChild(likeEmoji);
             likeElem.appendChild(likeNum);
 
-            // likeEmoji.addEventListener('click', (e) => {
-            //     let likeValue = e.target.likes.value;
-            //     console.log(likeValue);
-            //     likeValue++;
-
-            //     axios({
-            //         method:'post',
-            //         url: commentsURL,
-            //         data : {
-            //             name: e.target.name.value,
-            //             comment: e.target.comment.value,
-            //             likes: e.target.likes.value,
-            //         }  
-            //     }).catch((err) => {
-            //         console.error(err);
-            //     });
-                
-            // })
-            
         });
     }).catch((err) => {
         console.error(err);

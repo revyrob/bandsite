@@ -261,9 +261,11 @@ body {
         @include tablet {
             margin-bottom: 2rem;
         } 
-        @include desktop {
+
+        @include desktop{
             margin-bottom: 0;
-        } 
+        }
+
     }
     
     &__known-user {
@@ -389,11 +391,4 @@ body {
         display: inline;
         
     }
-}
-// input.required:invalid {
-    //         border: 1px solid red;
-    // }
-    // textarea.required:invalid {
-        //     border: 1px solid red;
-        
-        // }
+

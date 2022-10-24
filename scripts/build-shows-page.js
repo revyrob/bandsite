@@ -154,13 +154,11 @@ axios.get(showsURL).then(response => {
         });
         list.appendChild(card);
     })
-    
-    
-    
+
+
 }).catch((err) => {
     console.error(err);
 });
-
 
 
 
