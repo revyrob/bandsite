@@ -430,7 +430,7 @@ body {
   }
 }
 .shows__card--selected {
-  background-color: #E1E1E1;
+  background-color: #AFAFAF;
 }
 .shows__card--title {
   font-size: 0.8125rem;
