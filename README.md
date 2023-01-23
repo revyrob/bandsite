@@ -1,8 +1,8 @@
 # 🌎 Bandsite 
-Assignment with Brainstation to use github, create multiple sprints, understand javscript, and manipulating the DOM.
+Assignment with Brainstation to use github, create multiple sprints, understand javscript, and manipulating the DOM.  
 
 ## 🚀 Demo
-
+https://revyrob.github.io/bandsite/
 
 ## 💻 Built with
 <li>HTML5</li>
@@ -17,4 +17,7 @@ Assignment with Brainstation to use github, create multiple sprints, understand 
     git clone git@github.com:revyrob/bandsite.git
 
 
-
+## 👩‍💻 To work on:
+<li>Make 'like' button work</li>
+<li>Ability to delete comment</li>
+<li>Hover with light grey on Shows page</li>
